@@ -1,0 +1,27 @@
+From alexander.reinholdt at t-online.de  Sat Sep 11 15:41:16 2010
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 11 Sep 2010 15:41:16 +0200
+Subject: [smb4k-devel] Smb4K 0.10.9 released
+Message-ID: <201009111541.16739.alexander.reinholdt@t-online.de>
+
+The nineth maintenance release fixes a serious problem with smb4k_sudowriter 
+and Qt 4.7 where /etc/sudoers was left with wrong file permissions after 
+writing to it breaking sudo system wide.
+
+ChangeLog:
+- Fixed restoring of wrong file permissions for sudoers file (closes #17481).
+
+MD5 sum: 37189747c2a794e23caca8cb77ba2d59 smb4k-0.10.9.tar.bz2
+SHA256 sum:  4ea3bdcc67ae3073e08d5819098c84da02d023c234e83a939c804af51bb5c1cb 
+smb4k-0.10.9.tar.bz2
+
+Main download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.9.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

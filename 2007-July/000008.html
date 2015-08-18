@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.8.4 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2007-July/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.8.4%20released&In-Reply-To=%3C200707141918.23296.alexander.reinholdt%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000009.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.8.4 released</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.8.4%20released&In-Reply-To=%3C200707141918.23296.alexander.reinholdt%40web.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.8.4 released">alexander.reinholdt at web.de
+       </A><BR>
+    <I>Sat Jul 14 19:18:23 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000009.html">[smb4k-devel] Status of the next major release
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The Smb4K team released version 0.8.4 of the advanced Samba browser for KDE 
+today.
+
+Overview: This release mainly features backported bug fixes from CVS HEAD, but 
+also provides an updated Turkish and reintroduces the Polish translation. The 
+main improvements are that printing on remote printer shares works again and 
+that the DCOP-related hanging of Smb4K on (KDE) start-up has been eliminated. 
+The list of all changes can be found below.
+
+ChangeLog:
+- Reintroduced Polish translation provided by Jerzy Trzeciak.
+- Updated Turkish translation and improved smb4k_add.desktop file. Thanks go
+  to Serdar Soytetir for providing the patches.
+- Fixed missing functionality of the --ignore-existing argument of rsync.
+- Fixed 'net rap server domain' command that is incompatible with Samba
+  3.0.25 (and later?).
+- Fixed Smb4KPasswordHandler::readAuth() that returned a pointer that was
+  freed when the function exited.
+- Fixed broken Smb4KPrint::print() function.
+- Fixed a bug in the preview dialog that led to the hanging of the whole
+  application.
+- Fixed DCOP-related hanging of Smb4K during KDE startup (closes #11189):
+  + Added 'X-DCOP-ServiceType=Unique' entry to smb4k.desktop file.
+  + Implemented KUniqueApplication::start() in main.cpp.
+- Fixed a potential memory leak in the bookmark editor.
+
+You can download the new version from <A HREF="http://smb4k.berlios.de/download.html">http://smb4k.berlios.de/download.html</A> or 
+directly from <A HREF="http://prdownload.berlios.de/smb4k/smb4k-0.8.4.tar.bz2.">http://prdownload.berlios.de/smb4k/smb4k-0.8.4.tar.bz2.</A>
+
+The source tarball has the following check sums:
+MD5 sum: 6e13c5c0c2e548187d51bc70072055e0 smb4k-0.8.4.tar.bz2
+SHA256 sum: 580ccd3f67f533b24c3624ae24cf1f4abac4923fba7da3e185ddd20ff3a7a0df 
+smb4k-0.8.4.tar.bz2
+
+Have fun!
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with
+experience...&quot; (unknown)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000009.html">[smb4k-devel] Status of the next major release
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

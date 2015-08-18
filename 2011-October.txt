@@ -1,0 +1,22 @@
+From alexander.reinholdt at t-online.de  Sun Oct  9 19:24:25 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 09 Oct 2011 19:24:25 +0200
+Subject: [smb4k-devel] Smb4K moves to Sourceforge
+Message-ID: <2960351.gpe6iDrUPf@dustpuppy>
+
+We were notified that BerliOS will be closed on 31.12.2011. Due to this fact, 
+we will move Smb4K over to Sourceforge. The project page already exists and 
+will be populated with the project's files within the next days and weeks. If 
+you have bookmarked our old project's web site http://smb4k.berlios.de, please 
+replace it with http://smb4k.sf.net.
+
+We would like to thank BerliOS for hosting the Smb4K project over the last 
+eight years!
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

@@ -1,0 +1,177 @@
+From alexander.reinholdt at t-online.de  Thu Oct  1 19:06:25 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Thu, 1 Oct 2009 19:06:25 +0200
+Subject: [smb4k-devel] Smb4K 0.10.4 released
+Message-ID: <200910011906.25898.alexander.reinholdt@t-online.de>
+
+Only one day after version 0.10.3 was released, Smb4K 0.10.4 has been made 
+available. It fixed a crash in the main window that was introduced in the last 
+release due to my carelessness. Sorry for any inconvenience!
+
+ChangeLog:
+- Fixed crash in the main window that made Smb4K unusable when no bookmarks
+  were defined.
+
+MD5 sum: e8676d8baaecdbcee60354c687a88a55 smb4k-0.10.4.tar.bz2
+SHA256 sum:  f9b32527d198dfc138aaf0478f4cb6aa811ed88c92d698fc59d96866fb8bd461 
+smb4k-0.10.4.tar.bz2
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.4.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+
+
+From alexander.reinholdt at t-online.de  Fri Oct 23 14:56:38 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Fri, 23 Oct 2009 14:56:38 +0200
+Subject: [smb4k-devel] Inclusion of Smb4K into KDE SVN
+In-Reply-To: <6a2e33620910030858h7e85b660xe5da0f392a523b6f@mail.gmail.com>
+References: <1518194.H4tRGgczxU@kde.org>
+	<200908260904.40469.alexander.reinholdt@t-online.de>
+	<6a2e33620910030858h7e85b660xe5da0f392a523b6f@mail.gmail.com>
+Message-ID: <200910231456.39090.alexander.reinholdt@t-online.de>
+
+Hello again!
+
+I got my SVN account a few days ago and I'm now ready to upload Smb4K to KDE 
+playground.
+
+How does the procedure work? Do I send you a tarball or upload Smb4K directly? 
+I do not care so much about our project's history. I assume this simplifies the 
+inclusion into KDE's SVN repository considerably.
+
+Please note that I will be unavailable until Sunday night.
+
+Best regards
+Alexander
+
+Am Samstag 03 Oktober 2009 17:58:13 schrieb Fathi Boudra:
+> Hi
+> 
+> > thank you very much for the information. I'll take the necessary steps
+> > and get back to you for the actual import when all pre-conditions are
+> > fullfilled.
+> 
+> what's the status ?
+> 
+> cheers,
+> 
+> Fathi
+> 
+
+
+From alexander.reinholdt at t-online.de  Mon Oct 26 10:59:26 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Mon, 26 Oct 2009 10:59:26 +0100
+Subject: [smb4k-devel] Inclusion of Smb4K into KDE SVN
+In-Reply-To: <6a2e33620910251454t79594ac8qee614a6ba039ecd0@mail.gmail.com>
+References: <1518194.H4tRGgczxU@kde.org>
+	<200910231456.39090.alexander.reinholdt@t-online.de>
+	<6a2e33620910251454t79594ac8qee614a6ba039ecd0@mail.gmail.com>
+Message-ID: <200910261059.26217.alexander.reinholdt@t-online.de>
+
+> As you don't care about the project history,
+> you can commit smb4k source code directly into KDE's SVN.
+
+That sounds great.
+
+Do I have to adjust the code prior to the upload or can it get in unchanged? 
+What about the localization files?
+
+If there are no objections, I'd like to commit the code to the network module.
+
+Best regards
+Alexander
+
+
+From fabo at kde.org  Sun Oct 25 22:54:27 2009
+From: fabo at kde.org (Fathi Boudra)
+Date: Sun, 25 Oct 2009 22:54:27 +0100
+Subject: [smb4k-devel] Inclusion of Smb4K into KDE SVN
+In-Reply-To: <200910231456.39090.alexander.reinholdt@t-online.de>
+References: <1518194.H4tRGgczxU@kde.org>
+	<200908260904.40469.alexander.reinholdt@t-online.de>
+	<6a2e33620910030858h7e85b660xe5da0f392a523b6f@mail.gmail.com>
+	<200910231456.39090.alexander.reinholdt@t-online.de>
+Message-ID: <6a2e33620910251454t79594ac8qee614a6ba039ecd0@mail.gmail.com>
+
+Hi,
+
+> How does the procedure work? Do I send you a tarball or upload Smb4K directly?
+> I do not care so much about our project's history. I assume this simplifies the
+> inclusion into KDE's SVN repository considerably.
+
+As you don't care about the project history,
+you can commit smb4k source code directly into KDE's SVN.
+
+cheers,
+
+Fathi
+
+
+From alexander.reinholdt at t-online.de  Wed Oct 28 08:01:04 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Wed, 28 Oct 2009 08:01:04 +0100
+Subject: [smb4k-devel] Inclusion of Smb4K into KDE SVN
+In-Reply-To: <6a2e33620910271145y3effb40flfff1312562e0aa49@mail.gmail.com>
+References: <1518194.H4tRGgczxU@kde.org>
+	<200910261059.26217.alexander.reinholdt@t-online.de>
+	<6a2e33620910271145y3effb40flfff1312562e0aa49@mail.gmail.com>
+Message-ID: <200910280801.04204.alexander.reinholdt@t-online.de>
+
+> you should contact localization team (cc'ed Pino, he can give you some
+> pointers).
+> they'll help you on this process.
+
+OK, thanks.
+ 
+> You can't go to the network module directly. First, you should go
+> through kdereview.
+> See http://techbase.kde.org/Policies/SVN_Guidelines
+> 
+> After kdereview, you could go to the network module or extragear.
+> Contact the network module coordinator (cc'ed Urs ;) and let him know
+> you're interested to move to KDE network module after kdereview.
+
+Sorry, I should have written network subfolder and not module. I know that I 
+first need to go through kdereview before I'm allowed to put the software to 
+extragear or the KDE modules. 
+
+Thanks for the contact. I'll approach Urs if necessary when I decided where to 
+put Smb4K after kdereview.
+
+I'll commit Smb4K to playground/network shortly.
+
+Best regards
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+From alexander.reinholdt at t-online.de  Sat Oct 31 09:46:52 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 31 Oct 2009 09:46:52 +0100
+Subject: [smb4k-devel] Smb4K in KDE Playground
+Message-ID: <200910310946.52826.alexander.reinholdt@t-online.de>
+
+Today I imported Smb4K HEAD to KDE Playground [1]. From now on, development 
+will take place there. Our CVS repository at BerliOS will still be used for 
+maintenance of the stable branches, though. Many thanks to the KDE sysadmin 
+team who helped with the transition.
+
+You can check out the latest development snapshot with anonymous SVN:
+
+$ svn co svn://anonsvn.kde.org/home/kde/trunk/playground/network/smb4k
+
+For the Smb4K team
+Alexander Reinholdt
+
+[1] http://websvn.kde.org/trunk/playground/network/smb4k/
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

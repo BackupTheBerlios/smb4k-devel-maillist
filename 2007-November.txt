@@ -1,0 +1,117 @@
+From alexander.reinholdt at web.de  Mon Nov 12 13:06:33 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Mon, 12 Nov 2007 13:06:33 +0100
+Subject: [smb4k-devel] Smb4K 0.9.0 release schedule
+Message-ID: <1242776327@web.de>
+
+Hello everyone,
+
+although I have been very quiet within the last months about the development of Smb4K, I'm happy to report that the main application is now in a very good shape for release and that the Konqueror plugin is currently being ported to the new GUI code. Thus, I want to announce the following release schedule for Smb4K 0.9.0:
+
+18.11.2007:   Beta version 
+
+02.12.2007:   Release candidate
+
+16.12.2007:   Release of 0.9.0
+
+Please note that this schedule may be changed if some problems occur.
+
+The messages are now frozen and it is the best time to translate the updated PO files. Since most of the GUI has been rewritten, there are many new strings and a lot of work to do. 
+
+For the translations I want to restate the policy for inclusion in the release. All PO files that have 50% and more translated strings will be incorporated. Unfortunately there are only about 5 meeting this requirement at the moment. I would be very pleased if we could boost this number.
+
+The 0.9 series will be the last KDE 3 branch of Smb4K. I decided to move the application completely to KDE 4 afterwards.
+
+Have a nice day
+
+Alexander
+_____________________________________________________________________
+Der WEB.DE SmartSurfer hilft bis zu 70% Ihrer Onlinekosten zu sparen!
+http://smartsurfer.web.de/?mc=100071&distributionid=000000000066
+
+
+
+From alexander.reinholdt at web.de  Sun Nov 18 11:35:18 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 18 Nov 2007 11:35:18 +0100
+Subject: [smb4k-devel] Beta version of Smb4K 0.9.0 released
+Message-ID: <200711181135.18272.alexander.reinholdt@web.de>
+
+After about eleven months of development, the Smb4K team is pleased to 
+announce the beta version of Smb4K 0.9.0. It comes with an almost entirely 
+rewritten GUI and many other changes under the hood such as a new 
+configuration system. For this reason, we want to encourage all our users to 
+test this pre-release and report [1] any problems and bugs.
+
+As you will notice, many of the translations have not been updated yet and 
+several are even abandoned. If you want your language to be supported by 
+Smb4K 0.9.0, we would be very pleased if you would help us. You can do so by 
+sending patches [2] for existing translation or by contributing [3] a new 
+one. Please contact the official translator to coordinate your work.
+
+Please note:
+* KDE 3.3 is required to compile this version of Smb4K.
+* The Konqueror plugin is work in progress, i.e. not all features have been 
+  implemented yet. Please do not report any bugs regarding this issue.
+* Smb4K 0.9.0beta will remove your old configuration file during the first 
+  start-up. You should backup your $HOME/.kde/share/config/smb4krc file if you 
+  plan on reverting to an earlier version later on.
+
+The source code can be downloaded from our FTP site [4]. The ChangeLog file is 
+included in the source file.
+
+For the Smb4K team
+Alexander Reinholdt
+
+
+[1] http://developer.berlios.de/bugs/?group_id=769
+[2] http://developer.berlios.de/patch/?func=addpatch&group_id=769
+[3] Send to dustpuppy AT users DOT berlios DOT de
+[4] ftp://ftp.berlios.de/pub/smb4k/pre-releases/
+
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+
+From alexander.reinholdt at web.de  Wed Nov 28 07:49:30 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Wed, 28 Nov 2007 07:49:30 +0100
+Subject: [smb4k-devel] Smb4K 0.8.7 released
+Message-ID: <200711280749.30659.alexander.reinholdt@web.de>
+
+This maintenance release of the 0.8 branch predominantly fixes problems 
+experienced when mounting and unmounting shares. This will especially please 
+our FreeBSD users who could not work with previous version because of these 
+bugs. Besides, the smb4k_cat utility has been revised, so that a corruption 
+of the /etc/sudoers or /etc/super.tab file should not occur anymore.
+
+ChangeLog:
+- Fixed smb4k_cat utility program:
+  + Enlarged the allowed length per line to 1024 (instead of 255) characters 
+    (closes #12262).
+  + Fixed a bug that could lead to corrupted files.
+- Fixed Smb4KPasswordHandler::readDefaultAuth() that returned a pointer that 
+  was freed when the function exited.
+- Fixed Smb4KMounter:
+  + Smb4K won't consider foreign shares for remounting on start-up. This also 
+    seems to solve the crash bug initially  reported in #11973 (closes #11467
+    and #12369).
+  + Fixed unmount command line in slotShutdown() function under FreeBSD.
+  + Fixed unmount command line in unmount() function under FreeBSD.
+
+Checksums:
+MD5 sum: 4ea8a3ffda9f67170cbc588a03d8fe97  smb4k-0.8.7.tar.bz2
+SHA256 sum: 2da66a117331bf4551150f091ba4c132b4c8ab32ff01e5c7b2f93d5f343cb4c6  
+smb4k-0.8.7.tar.bz2
+
+The new version can be downloaded from 
+http://prdownload.berlios.de/smb4k/smb4k-0.8.7.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

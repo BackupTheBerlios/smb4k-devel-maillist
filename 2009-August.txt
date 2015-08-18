@@ -1,0 +1,63 @@
+From alexander.reinholdt at t-online.de  Sat Aug 15 10:22:11 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 15 Aug 2009 10:22:11 +0200
+Subject: [smb4k-devel] Smb4K in KDE SVN
+In-Reply-To: <200908092101.09791.aacid@kde.org>
+References: <200908092101.09791.aacid@kde.org>
+Message-ID: <200908151022.11950.alexander.reinholdt@t-online.de>
+
+Hello Albert,
+
+that would be great! We already planned to contact the KDE developers and ask 
+for inclusion into the SVN repository, but due to my lack of time, this has 
+not happened yet. So, it's nice that it worked the other way around...
+
+How is the transfer supposed to work? Who should I contact or will you make 
+the necessary arrangements on KDE side?
+
+However, I'll be on a business trip until the end of next week, so nothing 
+will most likely happen until then unless Massimo has got the time and is 
+willing to handle this.
+
+Have a nice weekend!
+
+Alexander
+
+Am Sonntag 09 August 2009 21:01:09 schrieben Sie:
+> Hi Alexander i've been having a look at kde-apps.org and saw Smb4K and
+> realized that it would probably a good idea if you moved to KDE SVN, this
+> way you'd have somewhat more exposure to developers and translators making
+> it more easy for the people in the greater KDE community to Smb4K.
+>
+> What do you think?
+>
+> Albert
+
+
+
+From alexander.reinholdt at t-online.de  Sat Aug 22 09:56:42 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 22 Aug 2009 09:56:42 +0200
+Subject: [smb4k-devel] Inclusion of Smb4K into KDE SVN
+Message-ID: <200908220956.42854.alexander.reinholdt@t-online.de>
+
+Hello!
+
+I'm Alexander Reinholdt, the main developer of Smb4K, an advanced Samba 
+browser for KDE.
+
+A few days ago I was approached by Albert Astals Cid from the KDE project who 
+suggested to include Smb4K into KDE SVN to get some more exposure to 
+developers and users. He pointed me to you to make the necessary arrangements.
+
+We are very keen on having Smb4K included into the KDE repository. So, how 
+does the procedure work? Do we have to apply somewhere?
+
+Have a nice weekend!
+
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

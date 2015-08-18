@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.9.6 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2008-June/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.9.6%20released&In-Reply-To=%3C200806150924.15027.alexander.reinholdt%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000033.html">
+   <LINK REL="Next"  HREF="000035.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.9.6 released</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.9.6%20released&In-Reply-To=%3C200806150924.15027.alexander.reinholdt%40web.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.9.6 released">alexander.reinholdt at web.de
+       </A><BR>
+    <I>Sun Jun 15 09:24:14 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000033.html">[smb4k-devel] Smb4K 0.10.0alpha and 0.9.6
+</A></li>
+        <LI>Next message: <A HREF="000035.html">[smb4k-devel] Smb4K 0.10.0alpha &amp; schedule for release
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#34">[ date ]</a>
+              <a href="thread.html#34">[ thread ]</a>
+              <a href="subject.html#34">[ subject ]</a>
+              <a href="author.html#34">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>During a code review a crash in the network search code and a problem with 
+unquoted paths were found and eliminated. In addition, the synchronization 
+code was fixed.
+
+ChangeLog:
+- Fixed crash when the search item was empty: Pressing RETURN instead
+  of activating the search action will not start a search and
+  Smb4KScanner::search() now just returns when the search string is
+  empty.
+- Revised synchronization.
+  + Rewrote Smb4KSynchronizer::slotReceivedStdout().
+  + Fixed missing total file number in the synchronization dialog.
+  + Fixed error message when the cancel button was pressed.
+  + Removed obsolete code for old rsync versions.
+- Fixed unquoted path in Smb4KCore::open(), so that also paths ending
+  with '$' are opened correctly in Konsole.
+
+MD5 sum: e02948415fc2b56c4f6bf0c6dff9dbad  smb4k-0.9.6.tar.bz2
+SHA256 sum: 6e4b5740ec196eab4d3c626de7ce51d0d8fc322890a75b2a04c3fa814998c336  
+smb4k-0.9.6.tar.bz2
+
+The new version can be downloaded from 
+<A HREF="http://prdownload.berlios.de/smb4k/smb4k-0.9.6.tar.bz2.">http://prdownload.berlios.de/smb4k/smb4k-0.9.6.tar.bz2.</A>
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with 
+experience...&quot; (unknown)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000033.html">[smb4k-devel] Smb4K 0.10.0alpha and 0.9.6
+</A></li>
+	<LI>Next message: <A HREF="000035.html">[smb4k-devel] Smb4K 0.10.0alpha &amp; schedule for release
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#34">[ date ]</a>
+              <a href="thread.html#34">[ thread ]</a>
+              <a href="subject.html#34">[ subject ]</a>
+              <a href="author.html#34">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

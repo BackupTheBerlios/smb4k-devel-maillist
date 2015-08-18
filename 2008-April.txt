@@ -1,0 +1,112 @@
+From mueller at kde.org  Thu Apr  3 18:08:00 2008
+From: mueller at kde.org (Dirk Mueller)
+Date: Thu, 3 Apr 2008 18:08:00 +0200
+Subject: [smb4k-devel] [PATCH] install config module as module
+Message-ID: <200804031808.00289.mueller@kde.org>
+
+
+Hi, 
+
+smb4k currently installs the config module as a library, instead of a module. 
+the patch below corrects that. 
+
+
+Greetings,
+Dirk
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smb4k-config-module.diff
+Type: text/x-diff
+Size: 792 bytes
+Desc: not available
+URL: <https://lists.berlios.de/pipermail/smb4k-devel/attachments/20080403/b078c653/attachment.diff>
+
+From alexander.reinholdt at web.de  Sun Apr 20 10:11:43 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 20 Apr 2008 10:11:43 +0200
+Subject: [smb4k-devel] Status report
+Message-ID: <200804201011.43241.alexander.reinholdt@web.de>
+
+Hello everyone,
+
+before I give you an update on the current development status of Smb4K, I am 
+pleased to welcome Leslie Jensen in our project, who will work on the Swedish 
+translation.
+
+KDE 4 port:
+
+The port to KDE 4 slowly takes form. I just finished the porting of the search 
+dialog and of the network browser. Especially the search dialog has seen a 
+major improvement. It now has a menu and a tool bar as well as a popup menu. 
+This way it is easier to use. I would like to encourage you to test the code 
+and give me some feedback concerning the search dialog but also concerning 
+the rest of the application.
+
+The next tasks are to port the shares view(s) and get the main window into 
+shape for a first alpha release. When the alpha release will happen, I cannot 
+tell at the moment.
+
+Stable branch (KDE 3):
+
+Besides the development of the KDE 4 port I also prepared a new maintenance 
+release for the 0.9 branch. I plan to release version 0.9.4 next weekend. It 
+fixes two authentication related issues and bugs in the scanner and mounter. 
+Additionally I changed some strings and thus I would like to ask our 
+translators, to update their translations. Updates can be committed to CVS 
+until Saturday. I will generate the tarball of the new version on Sunday.
+
+That's it for now. Have a nice weekend.
+
+Bye
+Alexander
+
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+
+From alexander.reinholdt at web.de  Sun Apr 27 18:02:27 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 27 Apr 2008 18:02:27 +0200
+Subject: [smb4k-devel] Smb4K 0.9.4 released
+Message-ID: <200804271802.27406.alexander.reinholdt@web.de>
+
+Smb4K 0.9.4 comes with fixes for minor bugs in the scanner, the mounter, the 
+network browser, the configuration dialog, and the shares views. Most of the 
+work went into revising the password handler: We successfully tracked down 
+and finally eliminated the "Smb4K hangs on KDE start-up" issue. Additionally, 
+the wallet support won't be disabled completely when the authentication 
+fails, but only for the current session.
+
+ChangeLog:
+- Smb4KGlobal::timer() is now deprecated.
+- The core classes now use QObject::timerEvent() instead of a connection
+  to Smb4KGlobal::timer().
+- Smb4K will try to launch the wallet manager before it opens the wallet.
+  This should prevent it from hanging on start-up (closes #12707).
+- If the digital wallet could not be opened, KWallet support won't be
+  disabled completely but only for the current session.
+- Fixed blocking of tooltips in the network browser.
+- Fixed invalid check in the network browser's tool tip code.
+- Simplified code in smb4k_cat. Bumped version to 0.8.
+- Fixed disabled configuration dialog when another user edited the same
+  system file.
+- Fixed wrong path when the strings "cifs" or "smbfs" were part of the
+  mount point name (closes #13342).
+- Fixed unrecognized authentication error when querying the workgroup
+  master browser for the workgroup members (closes #12830).
+- Fixed flickering of items in the shares views.
+- Applied patch by Dirk Mueller that installs the configuration dialog as
+  KDE module.
+
+The source code of the new version can be downloaded from our project page at 
+http://smb4k.berlios.de/download.html or directly from 
+http://prdownload.berlios.de/smb4k/smb4k-0.9.4.tar.bz2.
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

@@ -1,0 +1,25 @@
+From alexander.reinholdt at web.de  Mon May 19 22:51:11 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Mon, 19 May 2008 22:51:11 +0200
+Subject: [smb4k-devel] Status report
+Message-ID: <200805192251.11298.alexander.reinholdt@web.de>
+
+Hello everyone,
+
+while working on the KDE 4 port, I discovered a bug in the scanner code of the 
+stable branch that makes another bugfix release necessary. The release will 
+contain a new configuration item, that needs to be translated. So, I want to 
+encourage our translators to update their translations.
+
+The KDE 4 port slowly takes form. The last few days I fixed several bugs and 
+implemented new features in the main window. The only thing that is still 
+missing is the shares view. I plan to start porting it next weekend. So, I 
+hope we can release a first alpha release pretty soon.
+
+Bye
+Alexander 
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

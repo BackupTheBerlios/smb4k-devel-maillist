@@ -1,0 +1,132 @@
+From alexander.reinholdt at web.de  Sun Apr  8 10:02:08 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 8 Apr 2007 10:02:08 +0200
+Subject: [smb4k-devel] Smb4K 0.8.1 and another set of security fixes released
+Message-ID: <200704081002.08946.alexander.reinholdt@web.de>
+
+Today, we are releasing version 0.8.1 of Smb4K, the SMB/CIFS share browser for 
+KDE. It mainly contains security fixes for the utility programs and every 
+user is strongly adviced to update.
+
+Overview: Smb4K 0.8.1 comes with new versions of the utility programs, that 
+have been rewritten from scratch to account for several security weaknesses 
+(see below) that were discovered by Ben Hutchings after version 0.8.0 was 
+released. During the rewite, we tried to stay compatible with previous 
+versions of the utility programs, but with smb4k_kill this was  not possible: 
+The signal number was removed from the arguments list. Because of this, the 
+new version cannot be used as a direct replacement of previous versions. 
+Please use the respective patches, if necessary.
+
+Besides the security fixes, there are a few other improvements: Smb4K now uses
+the CIFS file system by default, because several distributions already have 
+removed support for the SMBFS one. In addition, we started to address the 
+browsing problems several users experienced in Active Directory environments 
+and - hopefully - fixed the NT_STATUS_ACCOUNT_DISABLED error. Two more 
+annoying bugs in the Smb4KFileIO class and two compilation errors were also 
+corrected. The full list of changes can be found below.
+
+Security Issues: Ben Hutchings discovered the following security weaknesses in 
+the utility programs:
+- Due to insufficient sanitation, smb4k_mount allowed an user to mount any
+  (local) device if the program was used in combination with sudo or super.
+- The function findprog(), which was in present smb4k_mount, smb4k_umount, and 
+  smb4k_kill, returned a pointer to memory that was freed when the function
+  exited.
+- The function replace_special_characters(), that was present in smb4k_mount
+  and smb4k_umount, returned a pointer to memory that was freed after the
+  function exited. Additionally, it didn't replace the hyphen.
+
+MD5 sum: 49d7a58f751d04c6c0697ee5e5912d4d  smb4k-0.8.1.tar.bz2
+SHA1 sum:</b> 8b4c87226a2bdd9e7ec0d853e498a09fcbda4b80 smb4k-0.8.1.tar.bz2
+
+ChangeLog Smb4K 0.8.1:
+- Rewrote smb4k_mount, smb4k_umount, smb4k_kill, smb4k_cat, and smb4k_mv from
+  scratch in order to fix the following security weaknesses discovered by 
+  Ben Hutchings (should finally close #9631):
+  + Due to insufficient sanitation, smb4k_mount allowed an user to mount any
+    (local) device if the program was used in combination with sudo or super.
+  + The function findprog(), which was in present smb4k_mount, smb4k_umount,
+    and smb4k_kill, returned a pointer to memory that was freed when the
+    function exited.
+  + The function replace_special_characters(), that was present in smb4k_mount
+    and smb4k_umount, returned a pointer to memory that was freed after the
+    function exited. Additionally, it didn't replace the hyphen.
+- Changes in smb4k_mount:
+  + Moved to getopt_long() to parse the command line options.
+  + Added '-n' and '-s' switches (not under FreeBSD) as short forms of the
+    '--suid' and '--no-suid' arguments, respectively.
+  + Added '--version' argument.
+  + Out of the many arguments that may be passed to the 'mount' binary, only
+    '-t <filesystem>' and '-o <options>' are still supported with smb4k_mount.
+  + All file systems except 'smbfs' and 'cifs' will result in an error.
+  + Fixed order of the arguments that were passed to 'mount.cifs' and
+    'smbmount' (the '-o <options>' argument must be placed at the end).
+  + Added check if a share in the form //HOST/SHARE is supplied. If this is
+    not the case, smb4k_mount will error out.
+  + Improved FreeBSD support.
+- Changes in smb4k_umount:
+  + Moved to getopt_long() to parse the command line arguments.
+  + Added '-n' and '-s' switches (not under FreeBSD) as short forms of the
+    '--suid' and '--no-suid' arguments, respectively.
+  + Added '--version' argument.
+  + Added check if a mount point is supplied at all.
+  + Improved FreeBSD support.
+  + The '--smbfs' and '--cifs' arguments have been deprecated and are now
+    inoperable. They are still present for backward compatibility, but may be
+    removed any time soon.
+- Changes in smb4k_kill:
+  + Moved to getopt_long() to parse the command line arguments.
+  + Added '--version' argument.
+  + smb4k_kill does not take a signal number anymore. You can only terminate
+    a process with the SIGTERM signal.
+- Changes in smb4k_cat:
+  + Moved to getopt_long() to parse the command line arguments.
+  + Added '--version' argument.
+- Changes in smb4k_mv:
+  + Moved to getopt_long() to parse the command line arguments.
+  + Added '--version' argument.
+  + Added a check if the source and destination files are regular files. If
+    they are not, smb4k_mv will error out.
+- Adjusted Smb4KMounter class to the slightly changed behavior of the utility
+  programs:
+  + Removed SIGTERM signal from command line in Smb4KMounter::abort() because
+    of the changes made to smb4k_kill.
+  + Changed the command lines for smb4k_mount and smb4k_umount.
+- Started to address the browsing problems experienced by users in Active
+  Directory environments: If the NT_STATUS_ACCOUNT_DISABLED error is
+  encountered (which actually seems to be an authentication issue), Smb4K
+  won't error out anymore but ask the user for the user name and password
+  (closes #10280).
+- Fixed two bugs in Smb4KFileIO:
+  + The search for the lock file directory will not return a directory that is
+    not readable and writeable anymore (except /var and /tmp are mounted ro).
+  + If the lock file does not exist when Smb4KFileIO::removeLockFile() wants
+    to delete it, no error will be shown anymore.
+- Fixed a compilation error under SUSE (10.2) und with the upcoming GCC 4.3.
+- Smb4K now uses the CIFS file system by default (closes #10804).
+- The handbook was updated to reflect the changes made to the utility  
+  programs.
+
+Smb4K 0.8.1 can be downloaded from here: 
+http://prdownload.berlios.de/smb4k/smb4k-0.8.1.tar.bz2
+
+Due to the severity of the security weaknessses, we also released security 
+fixes for Smb4K 0.7.5 and 0.6.10a. All other versions are not supported 
+anymore. 
+
+The patches can be downloaded from here: 
+http://prdownload.berlios.de/smb4k/004_security_fix_smb4k_0.6.10a_unified.diff.bz2
+http://prdownload.berlios.de/smb4k/004_security_fix_smb4k_0.7.5_unified.diff.bz2
+
+Release notes and ChangeLog are available here (Please read before patching 
+your source):
+https://developer.berlios.de/project/shownotes.php?release_id=9777 (0.6.10a)
+https://developer.berlios.de/project/shownotes.php?release_id=11706 (0.7.5)
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

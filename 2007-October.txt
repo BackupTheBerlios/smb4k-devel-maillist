@@ -1,0 +1,25 @@
+From alexander.reinholdt at web.de  Mon Oct 15 17:19:19 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Mon, 15 Oct 2007 17:19:19 +0200
+Subject: [smb4k-devel] Smb4K 0.8.6 released
+Message-ID: <200710151719.19737.alexander.reinholdt@web.de>
+
+The Smb4K team is proud to announce the immediate availability of version 
+0.8.6 of the advanced network neighborhood browser for KDE. This maintenance 
+release fixes a crash that several people experienced when mounting shares 
+that contained special characters.
+
+ChangeLog Smb4K 0.8.6:
+- Fixed a crash in Smb4KMounter::findShareByPath() (closes #11499, #11543 and
+  #11973).
+
+As always, the source can be downloaded from our project page at 
+http://developer.berlios.de/projects/smb4k/ .
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

@@ -1,0 +1,348 @@
+From alexander.reinholdt at web.de  Sun Jun  1 17:56:53 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 1 Jun 2008 17:56:53 +0200
+Subject: [smb4k-devel] Smb4K 0.9.5 released
+Message-ID: <200806011756.53717.alexander.reinholdt@web.de>
+
+This release fixes a logon issue that was introduced in version 0.9.4: Smb4K 
+sent the login and password to the master browser by default when asking for 
+the browse list. This could cause at least master browsers running Samba to 
+return an empty browse list. This behavior has now been made configurable and 
+can be enabled in the configuration dialog under Network | Authentication | 
+Master browsers need authentication. It is turned off by default.
+
+ChangeLog:
+- Fixed an authentication issue that occurred when the master browser 
+  was queried for the workgroup members.
+- Added a configuration entry that must be enabled when authentication 
+  information needs to be send to the workgroup master browser when 
+  querying it for the browse list.
+
+MD5 sum: fcddc095301c5d2f31b2aa883d30f3ba smb4k-0.9.5.tar.bz2
+
+SHA256 sum: 9a7ea33c46b1f7324240ec55e0ceec15becef0049c93aa834709e9cba1f7da97 
+smb4k-0.9.5.tar.bz2
+
+The new source code can be downloaded from 
+http://prdownload.berlios.de/smb4k/smb4k-0.9.5.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+
+From alexander.reinholdt at web.de  Sun Jun  8 13:38:05 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 8 Jun 2008 13:38:05 +0200
+Subject: [smb4k-devel] Smb4K 0.10.0alpha and 0.9.6
+Message-ID: <200806081338.06126.alexander.reinholdt@web.de>
+
+Hello everyone,
+
+the whole code base except the Konqueror plugin is now ported KDE 4. There are 
+only a few improvements I want to implement before a first alpha release can 
+be made available. Also, most of the messages won't be changed before the 
+final release, so that you can already start to translate them.
+
+If everything develops as expected, I think we can publish the alpha release 
+of Smb4K 0.10.0 in about one or two weeks.
+
+The only question that is left for decision is if we should keep the Konqueror 
+plugin or if we should remove it and replace it with a plugin for Dolphin or 
+even something different. What do you think, Massimo? Maybe I should add here, 
+that I plan to implement a plasmoid when the Plasma documentation has matured.
+
+During some testing of the development version, I found a crash that is also 
+present in the stable branch. I fixed it and added a backport of the new 
+synchronizer code from head that eliminates some minor bugs in the 
+synchronization dialog. This makes another maintenance release necessary. I 
+will try to release it within the next week. So, if you want to update your 
+translation in the stable branch, please do it until Wednesday 11th.
+
+Have a nice weekend
+
+Bye
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+
+From alexander.reinholdt at web.de  Sun Jun 15 09:24:14 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 15 Jun 2008 09:24:14 +0200
+Subject: [smb4k-devel] Smb4K 0.9.6 released
+Message-ID: <200806150924.15027.alexander.reinholdt@web.de>
+
+During a code review a crash in the network search code and a problem with 
+unquoted paths were found and eliminated. In addition, the synchronization 
+code was fixed.
+
+ChangeLog:
+- Fixed crash when the search item was empty: Pressing RETURN instead
+  of activating the search action will not start a search and
+  Smb4KScanner::search() now just returns when the search string is
+  empty.
+- Revised synchronization.
+  + Rewrote Smb4KSynchronizer::slotReceivedStdout().
+  + Fixed missing total file number in the synchronization dialog.
+  + Fixed error message when the cancel button was pressed.
+  + Removed obsolete code for old rsync versions.
+- Fixed unquoted path in Smb4KCore::open(), so that also paths ending
+  with '$' are opened correctly in Konsole.
+
+MD5 sum: e02948415fc2b56c4f6bf0c6dff9dbad  smb4k-0.9.6.tar.bz2
+SHA256 sum: 6e4b5740ec196eab4d3c626de7ce51d0d8fc322890a75b2a04c3fa814998c336  
+smb4k-0.9.6.tar.bz2
+
+The new version can be downloaded from 
+http://prdownload.berlios.de/smb4k/smb4k-0.9.6.tar.bz2.
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+
+From alexander.reinholdt at web.de  Sat Jun 21 19:57:43 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sat, 21 Jun 2008 19:57:43 +0200
+Subject: [smb4k-devel] Smb4K 0.10.0alpha & schedule for release
+Message-ID: <200806211957.43777.alexander.reinholdt@web.de>
+
+Hello everyone,
+
+today I finished the last item on my list that I wanted to implement before an 
+alpha release: the drag and drop support in the shares view. And I think now 
+is the time to release the first version to the public. This will be done 
+tomorrow. However there are still features missing. Especially the main window 
+does still need a bit of work and there are also one or two other things I 
+want to implement.
+
+I plan to release at least two additional beta versions before the final 
+version will be made available, so that the schedule for release will roughly 
+look like this:
+
+22.06.2008: Release Smb4K 0.10.0alpha
+06.07.2008: Release Smb4K 0.10.0beta1
+20.07.2008: Release Smb4K 0.10.0beta2
+03.08.2008: Release Smb4K 0.10.0
+
+This schedule might still be changed if some unexpected showstoppers appear.
+
+Since most of the messages won't change until the final release, you can 
+already start to translate the messages. They can be checked out by running 
+the following command in the shell:
+
+$ cvs -d<login>@cvs.berlios.de:/cvsroot/smb4k co -P smb4k/po
+
+Please note that due to our new build system, the translations are not stored 
+under po/<lang>.po anymore but under po/<lang>/smb4k.po.
+
+If you want to check out the whole source code and test it or help with 
+development, you should run the following command:
+
+$ cvs -d<login>@cvs.berlios.de:/cvsroot/smb4k co -P smb4k
+
+Compilation of the source should be done in an extra build directory. It can 
+be set up like this:
+
+$ mkdir smb4k_build
+$ cd  smb4k_build
+$ cmake -DCMAKE_INSTALL_PREFIX=<install_prefix> -DCMAKE_BUILD_TYPE=Debug . 
+<path_to_source>
+
+If you want cmake to generate KDevelop project files, add the -GKDevelop3 
+argument.
+
+Please note that the Konqueror plugin is not enabled by default, because it is 
+not ported yet. To enable it, e.g. if you want to port it, also add the 
+-DCOMPILE_KONQPLUGIN=true argument.
+
+That's it for now.
+
+Have a nice weekend!
+
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+
+From alexander.reinholdt at web.de  Sun Jun 22 11:03:21 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 22 Jun 2008 11:03:21 +0200
+Subject: [smb4k-devel] Smb4K 0.10.0alpha released
+Message-ID: <200806221103.22302.alexander.reinholdt@web.de>
+
+We are proud to announce the immediate availability of the alpha release of 
+Smb4K 0.10.0, the first version that runs (only) under KDE 4. Although it is 
+not adequate for daily use, Smb4K 0.10.0alpha is already quite stable. 
+However, there are most certainly still bugs. Thus, we want to encourage our 
+users to report any problems to our bug tracker at 
+http://developer.berlios.de/bugs/?group_id=769.
+
+Compared to the current stable 0.9 branch many changes have been made and old 
+cruft has been eliminated. If you want to have an overview of all 
+modifications, please refer to the ChangeLog file within the source tarball.
+
+Since we changed to cmake instead of automake & friends with this version, the 
+configuration is now done in a different way. Do as follows to configure and 
+compile Smb4K:
+
+1. Extract the source tarball:
+
+   $ tar xvfj smb4k-0.10.0alpha.tar.bz2
+
+2. Create a build directory:
+
+   $ mkdir smb4k_build
+   
+   At the moment this is not yet mandatory, but strongly adviced.
+  
+3. Change into the build directory:
+      
+   $ cd smb4k_build
+
+4. Configure the source:
+   
+   $ cmake -DCMAKE_INSTALL_PREFIX=[prefix] -DCMAKE_BUILD_TYPE=Debug . \
+     [path_to_source]
+      
+   Replace [prefix] with the prefix of your KDE installation and
+   [path_to_source] with the path to the source code. If you do not want to
+   compile Smb4K with debug symbols, replace 'Debug' with 'Release'. KDevelop
+   project files can be generated with the additional -GKDevelop3 argument.
+
+5. Now compile and install Smb4K:
+      
+   $ make && make install
+
+   If you want to be able to remove Smb4K with your package manager later on,
+   use checkinstall instead of make install. The package should be present in
+   your distribution's repository.
+
+Please note that this alpha version still lacks some features. Especially the 
+Konqueror plugin has not been ported and we haven't decided yet if it will be 
+in the final version. To help us with the decision, you can participate in a 
+survey we set up at 
+https://developer.berlios.de/survey/survey.php?group_id=769&survey_id=167.
+
+The source code of this pre-release can be downloaded from 
+http://prdownload.berlios.de/smb4k/smb4k-0.10.0alpha.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+
+From alexander.reinholdt at web.de  Tue Jun 24 20:51:17 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Tue, 24 Jun 2008 20:51:17 +0200
+Subject: [smb4k-devel] Smb4K 0.10.0alpha & schedule for release
+In-Reply-To: <daa89c680806212156ua924c42w560aaa3a799a34f2@mail.gmail.com>
+References: <200806211957.43777.alexander.reinholdt@web.de>
+	<daa89c680806212156ua924c42w560aaa3a799a34f2@mail.gmail.com>
+Message-ID: <200806242051.18192.alexander.reinholdt@web.de>
+
+Hello Martin,
+
+most of the strings will be the same. I'll update the translation in HEAD with 
+the one from 09 and commit it then (this evening).
+
+Bye
+Alexander
+
+
+
+Am Sunday 22 June 2008 schrieben Sie:
+> Hello, Alexander.
+> Last week I commited the spanish translation for 0.90 branch. Are the
+> messages the same for 0.10? I'm asking because I see more than a
+> hundred fuzzy strings in the cvs branch, and some are the same I fixed
+> in my commit.
+>
+> Bye
+>
+> 2008/6/21 Alexander Reinholdt <alexander.reinholdt at web.de>:
+> > Hello everyone,
+> >
+> > today I finished the last item on my list that I wanted to implement
+> > before an alpha release: the drag and drop support in the shares view.
+> > And I think now is the time to release the first version to the public.
+> > This will be done tomorrow. However there are still features missing.
+> > Especially the main window does still need a bit of work and there are
+> > also one or two other things I want to implement.
+> >
+> > I plan to release at least two additional beta versions before the final
+> > version will be made available, so that the schedule for release will
+> > roughly look like this:
+> >
+> > 22.06.2008: Release Smb4K 0.10.0alpha
+> > 06.07.2008: Release Smb4K 0.10.0beta1
+> > 20.07.2008: Release Smb4K 0.10.0beta2
+> > 03.08.2008: Release Smb4K 0.10.0
+> >
+> > This schedule might still be changed if some unexpected showstoppers
+> > appear.
+> >
+> > Since most of the messages won't change until the final release, you can
+> > already start to translate the messages. They can be checked out by
+> > running the following command in the shell:
+> >
+> > $ cvs -d<login>@cvs.berlios.de:/cvsroot/smb4k co -P smb4k/po
+> >
+> > Please note that due to our new build system, the translations are not
+> > stored under po/<lang>.po anymore but under po/<lang>/smb4k.po.
+> >
+> > If you want to check out the whole source code and test it or help with
+> > development, you should run the following command:
+> >
+> > $ cvs -d<login>@cvs.berlios.de:/cvsroot/smb4k co -P smb4k
+> >
+> > Compilation of the source should be done in an extra build directory. It
+> > can be set up like this:
+> >
+> > $ mkdir smb4k_build
+> > $ cd  smb4k_build
+> > $ cmake -DCMAKE_INSTALL_PREFIX=<install_prefix> -DCMAKE_BUILD_TYPE=Debug
+> > . <path_to_source>
+> >
+> > If you want cmake to generate KDevelop project files, add the -GKDevelop3
+> > argument.
+> >
+> > Please note that the Konqueror plugin is not enabled by default, because
+> > it is not ported yet. To enable it, e.g. if you want to port it, also add
+> > the -DCOMPILE_KONQPLUGIN=true argument.
+> >
+> > That's it for now.
+> >
+> > Have a nice weekend!
+> >
+> > Alexander
+> > --
+> > "Never argue with idiots. They drag you down to their level and beat you
+> > with experience..." (unknown)
+> >
+> > _______________________________________________
+> > Smb4K-devel mailing list
+> > Smb4K-devel at lists.berlios.de
+> > https://lists.berlios.de/mailman/listinfo/smb4k-devel
+
+
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+

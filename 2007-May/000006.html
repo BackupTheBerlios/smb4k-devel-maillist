@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] CVS HEAD up-to-date
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20CVS%20HEAD%20up-to-date&In-Reply-To=%3C200705202206.00804.alexander.reinholdt%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000005.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] CVS HEAD up-to-date</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20CVS%20HEAD%20up-to-date&In-Reply-To=%3C200705202206.00804.alexander.reinholdt%40web.de%3E"
+       TITLE="[smb4k-devel] CVS HEAD up-to-date">alexander.reinholdt at web.de
+       </A><BR>
+    <I>Sun May 20 22:06:00 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000005.html">[smb4k-devel] First commits of new code to HEAD
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6">[ date ]</a>
+              <a href="thread.html#6">[ thread ]</a>
+              <a href="subject.html#6">[ subject ]</a>
+              <a href="author.html#6">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello everyone,
+
+the CVS HEAD repository is now up-to-date. Today I committed the last local 
+modifications.
+
+Here are some remarks concerning changes in the code:
+
+(1) The smb4k/widgets/ subdirectory is obsolete. All class files that are 
+still present in there will vanish sooner or later. Do not link to 
+libsmb4kwidgets library anymore.
+
+(2) Smb4K now uses KConfig XT and thus making the Smb4KGlobal::config() object 
+obsolete. Please use the Smb4KSettings static functions.
+
+(3) The widgets of the main window have moved to KParts and you can load the 
+respective libraries using KLibLoader. See Smb4KApp class for an example.
+
+(4) The configuration dialog can also be loaded with KLibLoader. See Smb4KApp 
+for an example.
+
+(5) To access the core objects now use the static pointers Smb4KCore::self(), 
+Smb4KCore::scanner(), Smb4KCore::mounter(), Smb4KCore::synchronizer(), etc.
+
+(6) The popup menus that were organized in separate classes in previous 
+version of Smb4K are now managed by the KParts. If modifications are needed 
+to integrate them into e.g. the Konqueror plugin, please let me know.
+
+OK, that is it for now. If you have any trouble getting your code working, 
+please contact me.
+
+Have a nice evening!
+
+Bye
+Alexander
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with
+experience...&quot; (unknown)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000005.html">[smb4k-devel] First commits of new code to HEAD
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#6">[ date ]</a>
+              <a href="thread.html#6">[ thread ]</a>
+              <a href="subject.html#6">[ subject ]</a>
+              <a href="author.html#6">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

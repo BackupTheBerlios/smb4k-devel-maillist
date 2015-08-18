@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.8.2 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2007-May/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.8.2%20released&In-Reply-To=%3C200705011000.23471.alexander.reinholdt%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000004.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.8.2 released</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.8.2%20released&In-Reply-To=%3C200705011000.23471.alexander.reinholdt%40web.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.8.2 released">alexander.reinholdt at web.de
+       </A><BR>
+    <I>Tue May  1 10:00:23 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000004.html">[smb4k-devel] Smb4K 0.8.3 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3">[ date ]</a>
+              <a href="thread.html#3">[ thread ]</a>
+              <a href="subject.html#3">[ subject ]</a>
+              <a href="author.html#3">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is the second maintenance release of Smb4K 0.8 that we released today. It 
+provides a workaround for a bug that led to shares being remounted with UID=0 
+and GID=0 when the CIFS file system was used. Besides, a few cosmetic changes 
+and a bug fix were applied to the utility programs. The handbook was updated.
+
+ChangeLog:
+- Modified utility programs:
+  + Fixed the &quot;No mode was specified&quot; bug in smb4k_mount/smb4k_umount and
+    related issues in the other utility programs.
+  + Modified the help screens of the utility programs with respect to clarity
+    and better readability.
+  + Warnings are shown if deprecated arguments are used.
+  + Increased all versions by 0.1.
+- Worked around a bug where shares where remounted with UID=0 and GID=0 when
+  using the CIFS file system.
+- Improved the 'Trouble Shooting' section of the handbook and bumped its 
+  version to 1.1.2.
+
+MD5 sum:  42edd8da953003f0e91f31ec6b9a35f4  smb4k-0.8.2.tar.bz2
+SHA1 sum: 2cc8b19aa7ddbd127889ebb2169be5da25f35447  smb4k-0.8.2.tar.bz2
+
+The source code can be downloaded here:
+<A HREF="http://prdownload.berlios.de/smb4k/smb4k-0.8.2.tar.bz2.">http://prdownload.berlios.de/smb4k/smb4k-0.8.2.tar.bz2.</A>
+
+For the Smb4K project
+Alexander Reinholdt
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with
+experience...&quot; (unknown)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000004.html">[smb4k-devel] Smb4K 0.8.3 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3">[ date ]</a>
+              <a href="thread.html#3">[ thread ]</a>
+              <a href="subject.html#3">[ subject ]</a>
+              <a href="author.html#3">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

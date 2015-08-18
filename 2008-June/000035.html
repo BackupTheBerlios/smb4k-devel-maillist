@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.10.0alpha &amp; schedule for release
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2008-June/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.0alpha%20%26%20schedule%20for%20release&In-Reply-To=%3C200806211957.43777.alexander.reinholdt%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000034.html">
+   <LINK REL="Next"  HREF="000036.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.10.0alpha &amp; schedule for release</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.0alpha%20%26%20schedule%20for%20release&In-Reply-To=%3C200806211957.43777.alexander.reinholdt%40web.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.10.0alpha &amp; schedule for release">alexander.reinholdt at web.de
+       </A><BR>
+    <I>Sat Jun 21 19:57:43 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000034.html">[smb4k-devel] Smb4K 0.9.6 released
+</A></li>
+        <LI>Next message: <A HREF="000036.html">[smb4k-devel] Smb4K 0.10.0alpha released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#35">[ date ]</a>
+              <a href="thread.html#35">[ thread ]</a>
+              <a href="subject.html#35">[ subject ]</a>
+              <a href="author.html#35">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello everyone,
+
+today I finished the last item on my list that I wanted to implement before an 
+alpha release: the drag and drop support in the shares view. And I think now 
+is the time to release the first version to the public. This will be done 
+tomorrow. However there are still features missing. Especially the main window 
+does still need a bit of work and there are also one or two other things I 
+want to implement.
+
+I plan to release at least two additional beta versions before the final 
+version will be made available, so that the schedule for release will roughly 
+look like this:
+
+22.06.2008: Release Smb4K 0.10.0alpha
+06.07.2008: Release Smb4K 0.10.0beta1
+20.07.2008: Release Smb4K 0.10.0beta2
+03.08.2008: Release Smb4K 0.10.0
+
+This schedule might still be changed if some unexpected showstoppers appear.
+
+Since most of the messages won't change until the final release, you can 
+already start to translate the messages. They can be checked out by running 
+the following command in the shell:
+
+$ cvs -d&lt;login&gt;@cvs.berlios.de:/cvsroot/smb4k co -P smb4k/po
+
+Please note that due to our new build system, the translations are not stored 
+under po/&lt;lang&gt;.po anymore but under po/&lt;lang&gt;/smb4k.po.
+
+If you want to check out the whole source code and test it or help with 
+development, you should run the following command:
+
+$ cvs -d&lt;login&gt;@cvs.berlios.de:/cvsroot/smb4k co -P smb4k
+
+Compilation of the source should be done in an extra build directory. It can 
+be set up like this:
+
+$ mkdir smb4k_build
+$ cd  smb4k_build
+$ cmake -DCMAKE_INSTALL_PREFIX=&lt;install_prefix&gt; -DCMAKE_BUILD_TYPE=Debug . 
+&lt;path_to_source&gt;
+
+If you want cmake to generate KDevelop project files, add the -GKDevelop3 
+argument.
+
+Please note that the Konqueror plugin is not enabled by default, because it is 
+not ported yet. To enable it, e.g. if you want to port it, also add the 
+-DCOMPILE_KONQPLUGIN=true argument.
+
+That's it for now.
+
+Have a nice weekend!
+
+Alexander
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with 
+experience...&quot; (unknown)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000034.html">[smb4k-devel] Smb4K 0.9.6 released
+</A></li>
+	<LI>Next message: <A HREF="000036.html">[smb4k-devel] Smb4K 0.10.0alpha released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#35">[ date ]</a>
+              <a href="thread.html#35">[ thread ]</a>
+              <a href="subject.html#35">[ subject ]</a>
+              <a href="author.html#35">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

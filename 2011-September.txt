@@ -1,0 +1,30 @@
+From alexander.reinholdt at t-online.de  Mon Sep 19 12:22:13 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Mon, 19 Sep 2011 12:22:13 +0200
+Subject: [smb4k-devel] Smb4K 0.10.74 (1.0.0 beta5) released
+Message-ID: <3292193.cYnWdGb3CF@dustpuppy>
+
+In this fifth beta version the system tray widget has seen another major 
+revision. Additionally, the way how forced unmounts are handled was changed 
+(Linux only), the "Add Bookmark" action was added to the main tool bar, and 
+shares owned by other users are now marked with a red flag. Further work on 
+the handbook has been done.
+
+Checksums:
+MD5 sums: 7954fd0047066f79f47bc9d29c0261c3  smb4k-0.10.74.tar.bz2
+SHA256 sums: 4263c8dd4000a6740b80b391d132dee2f6cedcfc7546280d0855bc2cd664e81e  
+smb4k-0.10.74.tar.bz2
+
+Download location: 
+http://prdownload.berlios.de/smb4k/smb4k-0.10.74.tar.bz2
+
+Please report any bugs you find to our bug tracker: 
+http://developer.berlios.de/bugs/?group_id=769
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

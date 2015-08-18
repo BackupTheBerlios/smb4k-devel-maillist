@@ -1,0 +1,56 @@
+From alexander.reinholdt at t-online.de  Sun Jan  2 10:46:52 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 2 Jan 2011 10:46:52 +0100
+Subject: [smb4k-devel] Smb4K 0.10.66 (1.0.0 alpha2) released
+Message-ID: <201101021046.53664.alexander.reinholdt@t-online.de>
+
+In this alpha release, mounting of shares under KDE 4.5 was fixed, new 
+tooltips were implemented and serveral bugs eliminated.
+
+ChangeLog:
+see file within the tarball
+
+Download:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.66.tar.bz2
+
+Checksums:
+MD5 sum: 1d0e0fc580cb96496fe75695281d25f5 smb4k-0.10.66.tar.bz2
+SHA256 sum: 2f3f5e952fc0896e637cb96dd9c91916d88f209340b7bfc1ec3a5982d1aa927e 
+smb4k-0.10.66.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+From alexander.reinholdt at t-online.de  Sun Jan 23 08:47:39 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 23 Jan 2011 08:47:39 +0100
+Subject: [smb4k-devel] Smb4K 0.10.67 (1.0.0 alpha3) released
+Message-ID: <201101230847.39675.alexander.reinholdt@t-online.de>
+
+This alpha release fixes several bugs related to mounting and one crash in the 
+scanner. Smb4K also finally honors the icon sizes defined in the system 
+settings dialog and applies changes on the fly. The notifications have been 
+revised.
+
+Changes:
+see ChangeLog within the tarball
+
+Checksums:
+MD5 sum: d2301832c28c118aed8b493bda4ee2c8 smb4k-0.10.67.tar.bz2
+SHA256 sum: 17fddd4aa084ada1bb5ac23d6115261fe0ffb0b5244864b2970a667870de9104 
+smb4k-0.10.67.tar.bz2
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.67.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

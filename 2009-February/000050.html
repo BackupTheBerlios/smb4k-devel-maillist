@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.10.2 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.2%20released&In-Reply-To=%3C200902221200.12521.alexander.reinholdt%40t-online.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.10.2 released</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.2%20released&In-Reply-To=%3C200902221200.12521.alexander.reinholdt%40t-online.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.10.2 released">alexander.reinholdt at t-online.de
+       </A><BR>
+    <I>Sun Feb 22 12:00:12 CET 2009</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#50">[ date ]</a>
+              <a href="thread.html#50">[ thread ]</a>
+              <a href="subject.html#50">[ subject ]</a>
+              <a href="author.html#50">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The second maintenance release of Smb4K 0.10 has been released today. It fixes 
+problems that occurred with previous releases when Samba 3.3 was used and 
+comes with a new wallet manager that should fix the &quot;hangs on KDE start-up&quot; 
+bug that was experienced by several users. Under FreeBSD the file system port 
+has been removed, because it is identical to the SMB port. Several minor bugs 
+have been eliminated and the version of the core library was bumped to 3.1.0.
+
+ChangeLog:
+- Revised Smb4KMounter class:
+  + Under Linux, the import function does not insert a share with SMBFS
+    file system twice anymore.
+  + Prevent the mounter from trying to do something before the application
+    has completely started up.
+  + Replaced the file system port with the SMB port under FreeBSD.
+- Revised Smb4KScanner class:
+  + Fixed wrong error handling in Smb4KScanner::processWorkgroupMembers()
+    when an authentication error occurred.
+- Revised Smb4KSambaOptionsHandler:
+  + Fixed &quot;Invalid command:&quot; bugs with Samba 3.3 (closes #15276).
+  + Replaced all occurences of the file system port by the SMB port.
+- Added missing function declaration of Smb4KPrintInfo::setShareItem().
+- Revised Smb4KCore class:
+  + Fixed wrong connection to the previewer.
+- Fixed potentially missing comma at the end of the string that is passed
+  by Smb4KSambaOptionsHandler::mountOptions() under Linux.
+- Backported the new wallet manager from CVS (closes #14703).
+- Backported improved Smb4KAuthInfo class.
+- Backported Smb4KHomesSharesHandler::setHomesUsers( Smb4KAuthInfo * ).
+- Bumped version of core library to 3.1.0.
+- Reintroduced editing of the IP address in the bookmark editor.
+- Fixed removing of 'homes' users list from the &quot;Specify User&quot; dialog.
+- Backported wallet usage indicator in the main window.
+- Modified the Samba configuration page:
+  + Fixed a crash in the &quot;Custom Options&quot; tab.
+  + Removed the file system port entry under FreeBSD.
+
+MD5 sum: 19f631160cfb69a12370c72c1841fb7e smb4k-0.10.2.tar.bz2
+SHA256 sum: 774b4650f76b27ec3ea8f7858cabda660df3df9ae81eca33cefb1d1511b59469 
+smb4k-0.10.2.tar.bz2
+
+The new version can be downloaded from <A HREF="http://smb4k.berlios.de/download.html">http://smb4k.berlios.de/download.html</A>
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with 
+experience...&quot; (unknown)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#50">[ date ]</a>
+              <a href="thread.html#50">[ thread ]</a>
+              <a href="subject.html#50">[ subject ]</a>
+              <a href="author.html#50">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.10.3 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.3%20released&In-Reply-To=%3C200909302032.30575.alexander.reinholdt%40t-online.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.10.3 released</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.3%20released&In-Reply-To=%3C200909302032.30575.alexander.reinholdt%40t-online.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.10.3 released">alexander.reinholdt at t-online.de
+       </A><BR>
+    <I>Wed Sep 30 20:32:30 CEST 2009</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#54">[ date ]</a>
+              <a href="thread.html#54">[ thread ]</a>
+              <a href="subject.html#54">[ subject ]</a>
+              <a href="author.html#54">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The third maintenance release of Smb4K 0.10 has been released today. It fixes 
+two crashes and several other minor bugs. Due to comprehensive changes, the 
+soname of the core library has been bumped to 3.2.0.
+
+ChangeLog:
+- Fixed failing of error recognition when mounting shares with Samba &gt;= 3.3.
+- Backported Smb4KAuthInfo class from CVS HEAD. This should close the crash
+  in Smb4KAuthInfo::unc() under KDE 4.3.
+- Fixed network search code so that no comment shows up in the UNC with longer
+  share names.
+- Silenced enscript, so that no erroneous error messages are shown when 
+  printing.
+- Bumped soname of core library to version 3.2.0.
+- Fixed crash in system tray and a potential one in the main window
+  (closes #15970).
+- Fixed saving and restoring of main window layout.
+
+Checksums:
+MD5 sum: 9d6a7ab108e90c742b36a842f6d038d8  smb4k-0.10.3.tar.bz2
+SHA256 sum: ba8530f8189929f078c2d0cff2a3751965a3b6e0fee00b12f84c9dcfe83e92db  
+smb4k-0.10.3.tar.bz2
+
+Download location:
+<A HREF="http://prdownload.berlios.de/smb4k/smb4k-0.10.3.tar.bz2">http://prdownload.berlios.de/smb4k/smb4k-0.10.3.tar.bz2</A>
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with 
+experience...&quot; (unknown)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#54">[ date ]</a>
+              <a href="thread.html#54">[ thread ]</a>
+              <a href="subject.html#54">[ subject ]</a>
+              <a href="author.html#54">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

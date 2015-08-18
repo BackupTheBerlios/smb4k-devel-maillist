@@ -1,0 +1,24 @@
+From alexander.reinholdt at web.de  Mon Sep 24 18:35:46 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Mon, 24 Sep 2007 18:35:46 +0200
+Subject: [smb4k-devel] Smb4K 0.8.5 released
+Message-ID: <200709241835.47086.alexander.reinholdt@web.de>
+
+Yesterday the Smb4K team released version 0.8.5 of the advanced network 
+neighborhood browser for KDE. This release features an updated handbook and 
+fixed compilation errors under FreeBSD.
+
+ChangeLog:
+- Updated the handbook.
+- Fixed compile errors in Smb4KMounter class under FreeBSD.
+
+The source code can be downloaded from 
+http://prdownload.berlios.de/smb4k/smb4k-0.8.5.tar.bz2.
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

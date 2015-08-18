@@ -1,0 +1,413 @@
+From alexander.reinholdt at t-online.de  Sun Aug  3 15:57:55 2008
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 3 Aug 2008 15:57:55 +0200
+Subject: [smb4k-devel] Last minute changes and updated release schedule
+Message-ID: <200808031557.56048.alexander.reinholdt@t-online.de>
+
+Hello everyone,
+
+during my final checks, I discovered several issues that made it necessary to 
+modify the code. Unfortunately, also messages are affected, and I apologize to 
+all translators for that.
+
+These issues were:
+
+(1) The code that wrote to the sudoers file turned out to still not work 
+reliably. So, I coded a new utility program called smb4k_sudowriter which will 
+now add or remove users to/from the sudoers file, without corrupting it. Due 
+to the new program smb4k_cat and smb4k_mv were removed because they are not 
+needed anymore.
+
+(2) The error dialogs were barely readable, because they were not properly 
+resized. Additionally, they were not properly formated. I hope, by the changes 
+I applied, these issues are now fixed.
+
+Because of these last minute changes I think it is necessary to postpone the 
+release of Smb4K 0.10.0 for one or two weeks and release a release candidate 
+next weekend instead. The new schedule is, thus, as follows:
+
+2008-08-10: Release of Smb4K 0.10.0rc
+2008-08-17: Release of Smb4K 0.10.0 (if no show stoppers occur)
+
+Have a nice weekend!
+
+Best regards
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+
+From alexander.reinholdt at t-online.de  Mon Aug 25 09:28:52 2008
+From: alexander.reinholdt at t-online.de (alexander.reinholdt at t-online.de)
+Date: Mon, 25 Aug 2008 09:28:52 +0200
+Subject: [smb4k-devel] Status of Smb4K 0.10.0
+Message-ID: <1KXWVP-22SIRk0@fwd31.aul.t-online.de>
+
+Hello everyone,
+
+maybe you wonder, why Smb4K 0.10.0 has not been released yet. The reason
+is that in the last two weeks I was very busy at work, so I could not
+give Smb4K as much attention as I planned. Also, some bugs tuned up that
+needed to be fixed before the release. Last weekend I could fix several
+issues and now only minor problems are still present that I should be
+able to fix within this week. So, I hope that we can release Smb4K
+around next weekend.
+
+Best regards
+Alexander
+
+
+
+
+
+From alexander.reinholdt at t-online.de  Fri Aug 29 20:11:42 2008
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Fri, 29 Aug 2008 20:11:42 +0200
+Subject: [smb4k-devel] Smb4K 0.9.7 released
+Message-ID: <200808292011.42922.alexander.reinholdt@t-online.de>
+
+While the release of Smb4K 0.10.0 is only hours away, we bring you an update 
+to the current stable 0.9 branch. Version 0.9.7 fixes a bug in the password 
+handler code and several problems that occur when KDE 4.x is used. Also, the 
+Swedish translation has been updated.
+
+ChangeLog:
+- Backported rewritten Smb4KCore::searchPrograms() function that garantees
+  that the correct utility programs are found and we do not run into
+  trouble with another Smb4K installation on the system (i.e. in KDE 4).
+- Fixed error message box in Smb4KConfigDialog::checkSettings().
+- Fixed Smb4KPasswordHandler::writeAuth(). Incorrect login data is now
+  properly overwritten in no-wallet mode.
+- Backported improved Smb4KAuthInfo class.
+- Added hicolor fall back icons. They are actually copies of the crystal
+  ones.
+- Updated Swedish translation. Thanks go to Leslie Jensen for the update.
+
+MD5 sum: 199cdef7c0c3c40290afb2401379910a smb4k-0.9.7.tar.bz2
+SHA256 sum: 80c60d8350db72a7ddb44ddbab461cc8b25a753df8026a7ffdcb0bac8230dedf 
+smb4k-0.9.7.tar.bz2
+
+The new version can be downloaded from 
+http://download.berlios.de/smb4k/smb4k-0.9.7.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+From alexander.reinholdt at t-online.de  Sat Aug 30 19:58:54 2008
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 30 Aug 2008 19:58:54 +0200
+Subject: [smb4k-devel] Smb4K 0.10.0 released
+Message-ID: <200808301958.54643.alexander.reinholdt@t-online.de>
+
+Today, we released version 0.10.0 of Smb4K, the advanced network neighborhood 
+browser for KDE. It comes with many simplifications, improvements and 
+changes: The support of the deprecated SMBFS file system under Linux and the 
+support of the super program have been removed, the graphical user interface 
+was redesigned and most of the code of the core library rewritten. This 
+version also fixes one of the most aggrevating bugs that users experienced 
+when using Smb4K: the broken sudoers file problem.
+
+With this version, Smb4K has become a KDE 4 only application that uses the 
+cmake build system. For information how to configure Smb4K and what is needed 
+to compile it, you can have a look at [1].
+
+Since Konqueror is not the default file manager in KDE 4 anymore, we decided 
+to not port the Konqueror plugin for now. If it will be ported one day will 
+be decided later. If you want to influence our decision, please fill you the 
+(little bit outdated) survey [2].
+
+ChangeLog:
+- Ported Smb4K to KDE4 only.
+- Moved the build system to cmake.
+- Applied lots of small optimizations.
+- Fixed many GCC 4.3 related warnings.
+- Removed support for IRIX and Solaris. If you want to have it back, please
+  join the Smb4K project and help with development.
+- Removed Franck Babin from the list of authors because Smb4K does not
+  contains any code from him anymore.
+- Did a major rewrite of all KProcess related functions in the core classes,
+  because the API of the KProcess class changed.
+- Replaced Smb4KError by Smb4KCoreMessage class:
+  - Moved error codes from smb4kdefs.h to here.
+  - Added several error codes.
+  - Removed unused error codes.
+- Modified Smb4KSettings class:
+  + Renamed several configuration entries. Transition will be seamless due to
+    automatic updating.
+  + Removed support for deprecated SMBFS file system (Linux).
+  + Added port for the file system. Its default value is 445 (CIFS).
+- Modified Smb4KGlobal class:
+  + Removed Smb4KGlobal::timer(). It is replaced by per-class solutions.
+  + Removed Smb4KHomesShareHandler class. Use Smb4KHomesSharesHandler::self()
+    instead.
+  + Removed Smb4KPasswordHandler class. Use Smb4KPasswordHandler::self()
+    instead.
+  + Removed Smb4KSambaOptionsHandler class. Use 
+    Smb4KSambaOptionsHandler::self() instead.
+  + Added workgroupsList() function that returns the list of all discovered
+    workgroups.
+  + Added hostsList() function that returns the list of all discovered hosts.
+  + Added mountedSharesList() function that returns the list of all discovered
+    mounted shares.
+  + Added findWorkgroup() function. It replaces all previous per-class
+    solutions.
+  + Added findHost() function. It replaces all previous per-class solutions.
+  + Added findShareByUNC() function. It replaces all previous per-class
+    solutions.
+  + Added findShareByPath() function. It replaces all previous per-class
+    solutions.
+  + Added findInaccessibleShares() function. It replaces all previous 
+    per-class solutions.
+- Revised Smb4KAuthInfo class:
+  + Added setWorkgroup() function.
+  + Added setHost() function.
+- Rewrote Smb4KBookmark class and introduced several improvements.
+- Revised Smb4KBookmarkHandler class:
+  + Improved addBookmark() function. It now also takes a second argument
+    that determines if an existing bookmark should be overwritten/updated.
+  + The bookmarks are now saved in an XML file. The old data will be imported
+    automatically.
+  + Replaced Smb4KBookmarkHandler::findBookmarkByName() function by
+    Smb4KBookmarkHandler::findBookmarkByUNC().
+  + Removed obsolete code.
+- Replaced Smb4KWorkgroupItem class with the new Smb4KWorkgroup container
+  class.
+- Replaced Smb4KHostItem class with the new Smb4KHost container class.
+- Rewrote Smb4KShare class and merged Smb4KShareItem class with it. Please
+  consult the class documentation for information about changes.
+- Revised Smb4KPreviewer class:
+  + Removed isInitialized() function.
+  + Added getPreview() function.
+- Revised Smb4KPreviewItem class:
+  + Removed several functions.
+  + Introduced shareItem() function. Through it you can access information 
+    about the share.
+- Revised Smb4KPrintInfo class:
+  + The constructor now only takes a Smb4KShare object. You have to set the 
+    path to the file and the number of copies by the other functions provided 
+    by the class.
+  + Removed ipIsValid() function, because the check was already done in the
+    Smb4KShare constructor.
+- Modified Smb4KSynchronizer class:
+  + Removed support of old rsync versions.
+- Revised Smb4KSynchronizationInfo class:
+  + Renamed setIndividualProgress() function setCurrentProgress().
+  + Renamed individualProgress() function currentProgress().
+- Revised Smb4KMounter class:
+  + Renamed the mountedShare() signal to mounted().
+  + Optimized the import() function.
+  + Renamed getBrokenShares() function to getInaccessibleShares().
+  + Improved check for the share's file system, accessibility and free and 
+    total disk space.
+  + Revised Smb4KMounterPrivate private class and adjusted the code 
+    accordingly.
+  + Renamed findShareByName() function findShareByUNC(). It now returns a list
+    of pointers.
+  + Smb4KMounter now makes use of Smb4KGlobal::mountedSharesList().
+  + The findShareByPath() function now takes a QByteArray as argument.
+  + Improved remounting. Smb4K will try on every start-up to remount the share
+    until the server becomes available (closes #13217).
+  + Improved remounting. The IP address and the workgroup are now used.
+  + Removed support for the suid program super.
+- Revised the Smb4KSambaOptionsInfo class:
+  + Added setHasCustomOptions() function.
+  + Added hasCustomOptions() function.
+  + Added two constructors, one taking a Smb4KHost item and the empty one.
+  + Removed the constructor taking the UNC string. Use the empty constructor 
+    and the setUNC() function instead (if needed).
+  + Added workgroup() and setWorkgroup() functions.
+  + Added ip() and setIP() functions.
+  + The protocol functions use an enumeration instead of strings.
+  + The file system functions use an enumeration instead of strings.
+  + The write access functions use an enumeration instead of booleans.
+  + The kerberos functions use an enumeration indead of booleans.
+  + Added update() function.
+  + The UID functions now use uid_t instead of QString.
+  + The GID functions now use gid_t instead of QString.
+  + Added uidIsSet() function.
+  + Added gidIsSet() function.
+  + Added setProfile() and profile() function for future extension.
+- Revised Smb4KSambaOptionsHandler:
+  + Added static self() function and made the constructor and destructor
+    private.
+  + Improved check if the custom options are different from the default 
+    values. Because of this, less data needs to be written to the config file.
+  + Improved the read_smb_conf() function.
+  + There are three netOptions() functions, each taking different arguments.
+  + Added sharesToRemount() function that only returns information for those
+    shares that are to be remounted.
+  + Added private function get_host() that searches a host in the global hosts
+    list.
+  + The options handler now reads and writes the host's IP address and 
+    workgroup as well.
+  + The options are now saved to an XML file. The old data will be imported
+    automatically.
+  + Removed support for the deprecated SMBFS file system (Linux).
+- Revised Smb4KScanner class:
+  + The constructor now takes a QObject as only argument. Smb4KScanner makes 
+    now use of the new global workgroups and hosts lists.
+  + The getShares() function now takes a Smb4KHostItem object.
+  + The getWorkgroupMembers() function now takes a Smb4KWorkgroupItem object.
+  + The getInfo() function now takes a Smb4KHostItem object.
+  + Moved IP address check from searchForHost() to search() function.
+  + The internal workgroup and host list are never cleared but updated.
+  + Revised processWorkgroups() function.
+  + Revised processWorkgroupMembers() function.
+  + Revised processShares() function. It now checks if the share is mounted.
+  + Removed code that looks up IP addresses.
+  + Removed code that searches for hosts.
+- Revised the Smb4KPasswordHandler class:
+  + Added static self() function and made the constructor and destructor
+    private.
+  + Added init() function that attempts to open the wallet asynchronously.
+  + Added canReadAuthInfo() function that returns TRUE if you can retrieve
+    authentication information upon request.
+  + Added readyReadAuthInfo() signal that is emitted when the password
+    handler enters a state where you can retrieve authentication information
+    upon request.
+- Revised Smb4KPrint class:
+  + Added a queue where the print jobs are stored as long as they are 
+    processed.
+  + Added startTimer(), killTimer(), timerEvent() combo to process the 
+    incoming print requests.
+  + Removed slotRetry() because it was obsolete.
+- Introduced new Smb4KIPAddressScanner class, that operates on the global host
+  list and looks up the IP address for each host.
+- Introduced Smb4KSearch class, that looks up the search strings the user
+  provided through the search dialog. This now also includes remote shares. 
+  The search program to use will determined automatically (smbtree or 
+  nmblookup).
+- Revised Smb4KCore class:
+  + The open() convenience function has been revised.
+  + Rewrote searchPrograms() function so that only those utility programs are
+    found that belong to the current release and we do not run into problems
+    with parallel KDE 3 installations of Smb4K.
+- Revised Smb4KHomesSharesHandler class:
+  + The user names for the homes shares are now saved to an XML file. The old
+    data will be imported automatically.
+  + Replaced private read_names() and write_names() functions by 
+    readUserNames() and writeUserNames().
+  + The specifyUser() function now takes a pointer to an Smb4KShare object as
+    argument and returns a boolean.
+- Removed Smb4KFileIO class.
+- Introduced Smb4KSudoWriterInterface class that handles writing to the 
+  sudoers file from within Smb4K.
+- Bumped version of core library to 3.0.0.
+- Revised bookmark editor:
+  + Removed actionCollection() function because it is not used.
+  + Removed the "Delete All" menu entry because you can now select multiple
+    bookmarks and remove them with the redesigned "Delete" menu entry.
+  + Added the "Edit" action to the popup menu.
+- Revised custom options dialog:
+  + The dialog is now resizeable.
+  + Reverted to combo boxes for the UID and GID entries. The entries are
+    now more informative since besides the UID/GID the user/group name
+    is shown.
+- Revised preview dialog:
+  + If the mimetype is known, the files will have the appropriate icons.
+- Revised print dialog:
+  + The dialog is now resizeable.
+- Revised synchronization dialog:
+  + The dialog is now resizeable.
+  + The URL requesters now support squeezed text.
+- Revised configuration dialog:
+  + All labels are now taken from Smb4KSettings entries.
+  + Tidied up the Custom Options dialog.
+  + Several entries are now arranged in combo boxes.
+  + Removed "Network Search" group box from "Network" configuration page
+    since with the new search method there is no need to choose a program
+    for searching.
+  + Merged Samba client programs tabs. The new one is named "Client Programs".
+  + Redesigned the "Custom Settings" tab on the "Samba" configuration page.
+  + Improved writing/removing of super user entries.
+  + The (global) UID and GID input widgets were changed. The displayed UID
+    and GID are now read-only and you have to choose the new values from a
+    context menu.
+  + Removed "Drag & Drop" box from the "User Interface" page. Drag and drop
+    is now always enabled where implemented.
+  + Removed all options that belonged to the deprecated SMBFS file system
+    (Linux and similar operating systems).
+  + Added port for use with the file system.
+  + Moved the "Shares View" box from "User Interface"->"Main Window & System
+    Tray" to "User Interface"->"View" and merged it with the "List View" box.
+  + Removed "Programs" box from the "Super User" page.
+- Revised the network browser:
+  + Items are expanded after the search process ended and not before.
+  + Removed several obsolete functions from Smb4KNetworkBrowserItem class.
+  + Removed Smb4KNetworkBrowser::closeToolTip() and ::aboutToShowToolTip()
+    signals. The tool tip now emits similar signals.
+  + Implemented Smb4KNetworkBrowser::enterEvent() and
+    Smb4KNetworkBrowser::leaveEvent() to keep track of the mouse.
+  + Added Smb4KNetworkBrowser::mouseInside() and
+    Smb4KNetworkBrowser::mouseOutside() signals that are emitted when the 
+    mouse entered and left the network browser, respectively.
+  + The behavior of the rescan action changed slightly. If you move the mouse
+    outside the widget, the rescan will be affected by the selected item and 
+    not by the fact that the mouse is outside.
+  + Revised and improved the tool tip management.
+  + Removed Smb4KNetworkBrowser::blockToolTips(), because it is not needed
+    anymore.
+  + Added several functions to Smb4KNetworkBrowser to make it comply with
+    KDE's global settings.
+  + Added ability to move columns and save their positions.
+- Revised search dialog:
+  + Adjusted search dialog to the requirements of the new search core class.
+    It now displays servers and shares.
+  + Added ability to mount shares.
+  + Removed push buttons next to the combo box from the widget.
+  + Added search menu and tool bar.
+  + Added popup menu.
+  + The list widget is automatically cleared when a new search was started.
+  + Moved all slots from Smb4KSearchDialog to Smb4KSearchDialogPart class.
+  + The Smb4KSearchDialogItem::setupItem() function replaces the previous
+    Smb4KSearchDialogItem::setIcon(), because it collided with
+    KListWidget::setIcon().
+- Revised shares view:
+  + Merged list view and icon view into one KPart (Smb4KSharesViewPart).
+  + Added Smb4KSharesViewItemData container class that carries the information
+    needed by the items and the tool tips.
+  + The units used to display the disk usage were corrected. Smb4K has
+    always shown values with radix 2, so we have to use KiB, MiB, GiB, ...
+  + The list view and the tool tips now show the owner and group also with
+    the CIFS file system.
+  + Added ability to move columns and save their positions when the list view
+    is used.
+  + With foreign shares the unmount actions are only enabled when the user is
+    allowed to unmount those (see configuration dialog).
+  + Removed usage bar from the list view, since with the methods available for
+    the QTreeWidgetItem class this either cannot be achieved (?) or looks very
+    ugly. The usage in percent is still shown.
+  + Drag and Drop support is now always enabled. You can drop URLs onto items
+    and drag a share outside Smb4K.
+- Rewrote main window:
+  + Smb4KMainWindow replaces Smb4KApp class.
+  + The KParts are now organized in tabs by default.
+  + The main tool bar has been extended, but it is hidden by default. The user
+    can reach its functions through the menu.
+- Modified utility programs:
+  + Introduced smb4k_sudowriter utility program that writes to the sudoers 
+    file. This finally fixes the corrupted-sudoers-file issues that were 
+    reported by several users.
+  + Removed smb4k_cat utility program because its not needed anymore.
+  + Removed smb4k_mv utility program because its not needed anymore.
+- Updated handbook.
+
+The new version can be downloaded from [3].
+
+For the Smb4K team
+Alexander Reinholdt
+
+[1] http://smb4k.berlios.de/information.html
+[2] https://developer.berlios.de/survey/survey.php?group_id=769&survey_id=167
+[3] http://prdownload.berlios.de/smb4k/smb4k-0.10.0.tar.bz2
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

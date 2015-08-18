@@ -1,0 +1,54 @@
+From alexander.reinholdt at t-online.de  Sun Aug 14 08:15:05 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 14 Aug 2011 08:15:05 +0200
+Subject: [smb4k-devel] Smb4K 0.10.72 (1.0.0 beta3) released
+Message-ID: <201108140815.05829.alexander.reinholdt@t-online.de>
+
+This beta release comes with changes to the way mounpoints are stored 
+internally (QString instead of QByteArray) and adds support for new arguments 
+of the Samba utility programs. A regression compared to the 0.10.x series has 
+been fixed where the smb.conf file was not read on start-up leading to default 
+values not being set. Two crashes have been fixed in the preview dialog.
+
+MD5 sum:6b20f7eeec377b3e109c2163f5e7a535 smb4k-0.10.72.tar.bz2
+SHA256 sum: bdb7b0a628625d7ad4999fa03621fdbe6a55cdef55accb71d125a118853f2dcd 
+smb4k-0.10.72.tar.bz2
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.72.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+From alexander.reinholdt at t-online.de  Sun Aug 28 08:07:21 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 28 Aug 2011 08:07:21 +0200
+Subject: [smb4k-devel] Smb4K 0.10.73 (1.0.0 beta4) released
+Message-ID: <201108280807.22483.alexander.reinholdt@t-online.de>
+
+The fourth beta release of Smb4K 1.0.0 comes with a revised wallet manager. 
+First changes to the handbook were made to refelect version 1.0.0. Several 
+bugs have been fixed.
+
+Please report any bugs you find to our bug tracker: 
+http://developer.berlios.de/bugs/?group_id=769
+
+Checksums:
+MD5 sum: 8f161a1b1146dc44217826901deb35c8 smb4k-0.10.73.tar.bz2
+SHA256 sum: 98e355b5dc754983e2997cb7a49aca6d69107b7f7dba5240f633b2f38e4bb69b 
+smb4k-0.10.73.tar.bz2
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.73.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

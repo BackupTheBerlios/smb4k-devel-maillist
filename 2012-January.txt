@@ -1,0 +1,21 @@
+From alexander.reinholdt at t-online.de  Sun Jan 15 10:50:06 2012
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 15 Jan 2012 10:50:06 +0100
+Subject: [smb4k-devel] List abandoned due to move to Sourceforge.net
+Message-ID: <2030540.5ilGebOaaK@dustpuppy>
+
+Dear list members,
+
+as of today, the mailing list smb4k-devel at lists.berlios.de is abandoned due 
+to our move to Sourceforge.net. There is no replacement at Sourceforge for 
+this mailing list. But you may want to consider to use our 'General 
+Discussions' forum at http://sourceforge.net/p/smb4k/discussion/general/ from 
+now on.
+
+Best regards
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

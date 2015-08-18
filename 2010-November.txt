@@ -1,0 +1,33 @@
+From alexander.reinholdt at t-online.de  Sun Nov 14 15:26:42 2010
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 14 Nov 2010 15:26:42 +0100
+Subject: [smb4k-devel] Smb4K 0.10.65 (1.0.0 alpha1) released
+Message-ID: <201011141526.42938.alexander.reinholdt@t-online.de>
+
+With this development release you get the first alpha version of Smb4K 1.0.0. 
+Compared to the 0.10 branch the program changed a lot. If you are interested 
+in details, please refer to the ChangeLog file in the source tarball. The most 
+important changes are:
+
+- Improved integration with KDE.
+- Usage of notifications where appropriate.
+- Usage of KAuth to mount and unmount shares.
+- Required minimum KDE version is 4.4.0.
+- Initial laptop support through Solid.
+- Most core classes use threads to execute their tasks.
+- Improved handling of bookmarks.
+- Editor for authentication information.
+- Many usability enhancements.
+- Translations from the KDE translators (l10n-kde4).
+
+Since this is an alpha release, it most likely contains bugs. Please report 
+them to our bug tracker.
+
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

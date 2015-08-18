@@ -1,0 +1,31 @@
+From alexander.reinholdt at t-online.de  Wed Jul  1 08:13:02 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Wed, 1 Jul 2009 08:13:02 +0200
+Subject: [smb4k-devel] KIO slave for Smb4K
+Message-ID: <200907010813.02871.alexander.reinholdt@t-online.de>
+
+Hello everyone!
+
+Although I did not write for quite some time now, the development of Smb4K is 
+not dead. I had some very busy months and I didn't find the time to keep you 
+informed. Sorry.
+
+Today I want to announce that the next major version of Smb4K will most likely 
+ship with a KIO slave. I have uploaded a pre-alpha version to the CVS 
+repository that already can show workgroups/domains, hosts and shares if you 
+start with entering "smb4k:/" in the edit line in Dolphin or Konqueror or 
+click the "Network"->"Network Neighborhood" entry. Mounting and printing does 
+not work yet and entering an URL in the edit line will most likely lead to 
+some funny behavior. However, I think the KIO slave is on its way and we can 
+replace the Konqueror plugin with it soon. By the way, my attempts to port the 
+Konqueror plugin to KDE 4 failed miserably when I tried.
+
+Have a nice day!
+
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+

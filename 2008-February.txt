@@ -1,0 +1,113 @@
+From alexander.reinholdt at web.de  Tue Feb  5 19:54:08 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Tue, 5 Feb 2008 19:54:08 +0100
+Subject: [smb4k-devel] Status of KDE 4 port
+Message-ID: <200802051954.08746.alexander.reinholdt@web.de>
+
+Hello everyone,
+
+I wanted to give you an update on the KDE 4 port of Smb4K which will 
+eventually lead to the next major release.
+
+The core, the dialog classes, the configuration dialog, the main window (which 
+is only a skeleton) and the system tray widget compile at the moment. This 
+are the states of these components:
+
+(1) Core:
+The mounter and bookmark handler work. The other classes are either untested 
+or exhibit still grave problems. I'm currently working on the synchronizer 
+that seems to stop working during synchronization although rsync is still 
+active.
+
+(2) Dialogs:
+The mount dialog and the synchronization dialog have been tested and seem to 
+work. The rest is untested.
+
+(3) Main window:
+The main window is only a skeleton, because I replaced the old Smb4KApp with 
+the new Smb4KMainWindow class which contains only rudimentary code.
+
+(4) Configuration dialog:
+The configuration dialog compiles, but cannot be loaded via KPluginLoader at 
+the moment. Thus, it is not tested.
+
+(5) System tray widget:
+Works. The only problem is that the configuration dialog cannot be started.
+
+The rest of the classes has not been (fully) ported yet.
+
+If you want to help porting the application, please note that the build system 
+has been changed. We are now using cmake instead of the autoconf/automake 
+combo. Thus the configuration works a little bit different:
+
+(1) Check out CVS HEAD:
+    $ cvs -z3 -d<login>@cvs.berlios.de:/cvsroot/smb4k co -P smb4k
+
+(2) Create a build directory, i.e. smb4k_build:
+    $ mkdir smb4k_build
+
+(3) Run the following command to set up the build directory and configure the 
+source:
+    $ cmake -GKdevelop3 -DCMAKE_INSTALL_PREFIX=/path/to/install_dir \
+     -DCMAKE_BUILD_TYPE=Debug /path/to/source_dir /path/to/build_dir
+The argument "-GKdevelop3" is optional. It creates a KDevelop3 project file in 
+the build directory which is useful if you are using KDevelop for 
+development.
+
+(4) Now run
+    $ make
+    $ make install
+from the build directory to compile the source.
+
+(5) The source must be modified in the source directory. If you are using 
+KDevelop with the generated project file you will have immediately access to 
+the correct files.
+
+Help is greatly appreciated.
+
+Have a nice day!
+
+Bye
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+
+From alexander.reinholdt at web.de  Sun Feb 24 09:38:27 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 24 Feb 2008 09:38:27 +0100
+Subject: [smb4k-devel] Smb4K 0.9.3 released
+Message-ID: <200802240938.27952.alexander.reinholdt@web.de>
+
+This version comes with a backport from the current development branch that 
+improves the handling of login information. To achieve this, the format of 
+the data that is written to the wallet had to be changed and, thus, Smb4K 
+0.9.3 is not compatible with earlier versions. The conversion of the old data 
+will be done automatically. Apart from that two (un)mount issues and a 
+regression in the network browser have been eliminated.
+
+ChangeLog:
+- Revised and optimized the code of the password handler. One consequence
+  is, that the format of the wallet entries is not compatible with previous
+  versions. The old entries will be converted automatically.
+- Fixed a regression in the browser, where the list of shares was not deleted
+  when an host item was collapsed.
+- Fixed an unmount problem that occurred when mount.smbfs is indeed a symlink 
+  to or a copy of mount.cifs.
+- The mount command now includes the NetBIOS name of the local host, which
+  is at least needed when using port 139.
+
+MD5 sum:    f3a7f08c442c9db821244c8b5d3d4718
+SHA256 sum: 6ea441c176eea9ca5712244411c38b74563a94be689fda1d836d473114e44f01
+
+The source code can be downloaded from 
+http://prdownload.berlios.de/smb4k/smb4k-0.9.3.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

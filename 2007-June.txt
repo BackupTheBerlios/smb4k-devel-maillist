@@ -1,0 +1,32 @@
+From alexander.reinholdt at web.de  Wed Jun 13 19:10:29 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Wed, 13 Jun 2007 19:10:29 +0200
+Subject: [smb4k-devel] New caption for Smb4K
+Message-ID: <200706131910.29281.alexander.reinholdt@web.de>
+
+Hello everyone!
+
+Smb4K has evolved quite a bit since I came up with the caption "Smb4K - The 
+SMB/CIFS Browser for KDE" and I think it does not fit anymore. There are 
+currently two options I consider and I need some help with the decision:
+
+(1) Drop the caption altogether. The main window would only show "Smb4K".
+
+(2) Insert a new caption. There are currently two drafts, but I'm happy with 
+none of them:
+    
+* Smb4K - The Advanced Samba Tool for KDE
+
+* Smb4K - The Advanced Network Neighborhood Browser for KDE
+
+The first one might indicate that this tool was created by the Samba team, 
+which it wasn't, and the second is too long. Does anyone have a better idea? 
+And: Which option would you choose?
+
+Bye
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

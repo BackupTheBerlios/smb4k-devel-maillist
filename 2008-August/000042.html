@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Last minute changes and updated release schedule
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2008-August/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Last%20minute%20changes%20and%20updated%20release%20schedule&In-Reply-To=%3C200808031557.56048.alexander.reinholdt%40t-online.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000043.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Last minute changes and updated release schedule</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Last%20minute%20changes%20and%20updated%20release%20schedule&In-Reply-To=%3C200808031557.56048.alexander.reinholdt%40t-online.de%3E"
+       TITLE="[smb4k-devel] Last minute changes and updated release schedule">alexander.reinholdt at t-online.de
+       </A><BR>
+    <I>Sun Aug  3 15:57:55 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000043.html">[smb4k-devel] Status of Smb4K 0.10.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#42">[ date ]</a>
+              <a href="thread.html#42">[ thread ]</a>
+              <a href="subject.html#42">[ subject ]</a>
+              <a href="author.html#42">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello everyone,
+
+during my final checks, I discovered several issues that made it necessary to 
+modify the code. Unfortunately, also messages are affected, and I apologize to 
+all translators for that.
+
+These issues were:
+
+(1) The code that wrote to the sudoers file turned out to still not work 
+reliably. So, I coded a new utility program called smb4k_sudowriter which will 
+now add or remove users to/from the sudoers file, without corrupting it. Due 
+to the new program smb4k_cat and smb4k_mv were removed because they are not 
+needed anymore.
+
+(2) The error dialogs were barely readable, because they were not properly 
+resized. Additionally, they were not properly formated. I hope, by the changes 
+I applied, these issues are now fixed.
+
+Because of these last minute changes I think it is necessary to postpone the 
+release of Smb4K 0.10.0 for one or two weeks and release a release candidate 
+next weekend instead. The new schedule is, thus, as follows:
+
+2008-08-10: Release of Smb4K 0.10.0rc
+2008-08-17: Release of Smb4K 0.10.0 (if no show stoppers occur)
+
+Have a nice weekend!
+
+Best regards
+Alexander
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with 
+experience...&quot; (unknown)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000043.html">[smb4k-devel] Status of Smb4K 0.10.0
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#42">[ date ]</a>
+              <a href="thread.html#42">[ thread ]</a>
+              <a href="subject.html#42">[ subject ]</a>
+              <a href="author.html#42">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

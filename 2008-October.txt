@@ -1,0 +1,77 @@
+From alexander.reinholdt at t-online.de  Fri Oct 10 18:21:57 2008
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Fri, 10 Oct 2008 18:21:57 +0200
+Subject: [smb4k-devel] Smb4K 0.9.8 released
+Message-ID: <200810101821.57751.alexander.reinholdt@t-online.de>
+
+The Smb4K team today released another update to the 0.9 series of Smb4K. 
+Version 0.9.8 comes with the backported fix for the broken sudoers file issue. 
+The fix comprises the replacement of the utility programs smb4k_cat and 
+smb4k_mv by the new smb4k_sudowriter command and the removal of the support of 
+the program super (You have to to reconfigure Smb4K if you used super until 
+now.). To reflect these changes, the handbook has been updated.
+
+ChangeLog:
+- Backported smb4k_sudowriter utility program. It directly writes to 
+  the /etc/sudoers file and thus finally fixes the messed-up-sudoers-file
+  bug.
+- Removed smb4k_cat utility program. It's not needed anymore.
+- Removed smb4k_mv utility program. It's not needed anymore.
+- Removed the support for the program 'super'. If you used it before, you 
+  need to reconfigure Smb4K.
+- Completely rewrote Smb4KFileIO class to support smb4k_sudowriter.
+- Removed the "Programs" widget from the "Super User" configuration page.
+  It is not needed anymore.
+
+MD5 sum: 6a01f15db599881fd5b0b13a0124e81e  smb4k-0.9.8.tar.bz2
+SHA256 sum: 47b4f8cb5fde32cb2fc63276b42427e2e15bd4d53544923cbd5f71f5253b01d6  
+smb4k-0.9.8.tar.bz2
+
+The source code can be downloaded from [1].
+
+For the Smb4K team
+Alexander Reinholdt
+
+[1] http://prdownload.berlios.de/smb4k/smb4k-0.9.8.tar.bz2
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+
+From alexander.reinholdt at t-online.de  Mon Oct 13 00:18:14 2008
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Mon, 13 Oct 2008 00:18:14 +0200
+Subject: [smb4k-devel] Smb4K 0.10.1 released
+Message-ID: <200810130018.15166.alexander.reinholdt@t-online.de>
+
+Version 0.10.1 is the first maintenance release for the KDE 4.x branch of 
+Smb4K. It fixed a bug that caused Smb4K to enter an infinite loop on start-up 
+when custom options were defined and two issues in the smb4k_sudowriter 
+utility program. Additionally, two other minor problems were eliminated.
+
+ChangeLog:
+- Fixed compilation errors due to missing #include statements.
+- Fixed a wrong test string in Smb4KMounter::processMount().
+- Fixed a crash and a bug in the smb4k_sudowriter utility program. Bumped
+  version to 0.2.
+- Fixed an infinite loop in Smb4KSambaOptionsHandler::readCustomOptions().
+
+MD5 sum: 6488ca6070d12cd6f87dc7088434167d  smb4k-0.10.1.tar.bz2
+SHA256 sum: 7accdf8facad080c32b8ebe7f0872ff08193f2fc492d928877b20e7f37656987  
+smb4k-0.10.1.tar.bz2
+
+The source code can be downloaded from 
+http://prdownload.berlios.de/smb4k/smb4k-0.10.1.tar.bz2.
+
+For the Smb4K team
+Alexander Reinholdt
+
+P.S. Since no connection to the web server can be established at the moment, 
+our web site has not been updated yet.
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+

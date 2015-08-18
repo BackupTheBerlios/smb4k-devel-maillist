@@ -1,0 +1,32 @@
+From alexander.reinholdt at web.de  Sun Mar  2 17:18:41 2008
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 2 Mar 2008 17:18:41 +0100
+Subject: [smb4k-devel] Status of the KDE 4 port
+Message-ID: <200803021718.41834.alexander.reinholdt@web.de>
+
+Hello everyone!
+
+Here is another short update on the status of the KDE 4 port of Smb4K. 
+
+Today I finished the initial porting of the network browser. It complies and 
+can already be loaded successfully into the main window. However, first tests 
+have shown that it is still quite buggy and that there is a substantial 
+amount of work needed to bring it into shape.
+
+The core classes have seen even more changes since my last report. The mounter 
+is getting a better remount behavior at the moment and the password handler 
+now uses the new authentication data format that has also been backported to 
+the 0.9 branch.
+
+Overall much old cruft has been removed and I hope that this will eventually 
+speed up the application.
+
+Help in porting the application and fixing bugs is much appreciated.
+
+Best regards
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

@@ -1,0 +1,38 @@
+From alexander.reinholdt at t-online.de  Wed Sep 30 20:32:30 2009
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Wed, 30 Sep 2009 20:32:30 +0200
+Subject: [smb4k-devel] Smb4K 0.10.3 released
+Message-ID: <200909302032.30575.alexander.reinholdt@t-online.de>
+
+The third maintenance release of Smb4K 0.10 has been released today. It fixes 
+two crashes and several other minor bugs. Due to comprehensive changes, the 
+soname of the core library has been bumped to 3.2.0.
+
+ChangeLog:
+- Fixed failing of error recognition when mounting shares with Samba >= 3.3.
+- Backported Smb4KAuthInfo class from CVS HEAD. This should close the crash
+  in Smb4KAuthInfo::unc() under KDE 4.3.
+- Fixed network search code so that no comment shows up in the UNC with longer
+  share names.
+- Silenced enscript, so that no erroneous error messages are shown when 
+  printing.
+- Bumped soname of core library to version 3.2.0.
+- Fixed crash in system tray and a potential one in the main window
+  (closes #15970).
+- Fixed saving and restoring of main window layout.
+
+Checksums:
+MD5 sum: 9d6a7ab108e90c742b36a842f6d038d8  smb4k-0.10.3.tar.bz2
+SHA256 sum: ba8530f8189929f078c2d0cff2a3751965a3b6e0fee00b12f84c9dcfe83e92db  
+smb4k-0.10.3.tar.bz2
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.3.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

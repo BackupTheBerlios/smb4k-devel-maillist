@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.9.0 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.9.0%20released&In-Reply-To=%3C200712161311.09199.alexander.reinholdt%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000017.html">
+   <LINK REL="Next"  HREF="000019.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.9.0 released</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.9.0%20released&In-Reply-To=%3C200712161311.09199.alexander.reinholdt%40web.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.9.0 released">alexander.reinholdt at web.de
+       </A><BR>
+    <I>Sun Dec 16 13:11:08 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000017.html">[smb4k-devel] Branch for upcoming Smb4K 0.9 created / Status of	release
+</A></li>
+        <LI>Next message: <A HREF="000019.html">[smb4k-devel] First KDE 4 related code will enter CVS soon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18">[ date ]</a>
+              <a href="thread.html#18">[ thread ]</a>
+              <a href="subject.html#18">[ subject ]</a>
+              <a href="author.html#18">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>After about one year of development the Smb4K team is proud to announce Smb4K 
+0.9.0, the next major version of the advanced network neighborhood browser 
+for KDE. It comes with an almost entirely rewritten GUI and many other 
+changes under the hood such as the swtich to the KConfig XT configuration 
+system, the use of the KParts technology and an improved Konqueror plugin.
+
+Due to the new configuration system, the configuration you used for versions 
+prior to 0.9.0 is obsolete. It will be removed on the first start-up of 
+version 0.9.0 and you have to reconfigure Smb4K after that. If you want to be 
+able to revert to an older version later on, you should back up your 
+~/.kde/share/config/smb4krc file before it gets removed.
+
+The compilation of Smb4K 0.9.0 requires KDE 3.3 and Qt 3.3. Please make sure 
+you upgrade your system before compiling the source code. KDE 4 is not 
+supported.
+
+ChangeLog:
+- Cleaned up the code and updated the copyright statements (class 
+  descriptions, e-mail address and year).
+- Smb4K now uses KConfig XT throughout the whole application. This breaks
+  compatibility with older versions of Smb4K.
+- Replaced the old configuration dialog with a new one based on KConfigDialog
+  to take advantange of the KConfig XT infrastructure. It is a KDE module
+  library: libsmb4kconfigdialog.
+- Added some configuration options:
+  + The '-S &lt;arg&gt;' (signing state) and '-P' (use machine account) arguments of
+    smbclient are now supported.
+  + Added several advanced mount.cifs options and the ability to pass custom
+    options to mount.cifs (closes #10249). You will need Linux kernel 
+    &gt;= 2.6.15 to take advantage of most of them.
+  + Added the ability to remove all options at once in the &quot;Custom&quot; tab of the
+    Samba configuration page.
+- Changed some configuration options:
+  + The hidden files and directories are not displayed in the preview dialog 
+    by default.
+  + Rsync's '--existing' and '--ignore-existing' option can be active at the
+    same time.
+  + The default UID and GID are now those of the user.
+- Removed obsolete Smb4KUser class.
+- Implemented validity checks into the core container classes, so that only 
+  IPv4 and IPv6 IP addresses are used (closes #11470).
+- Modified Smb4KGlobal namespace:
+  + Removed Smb4KGlobal::kernelVersion() function.
+  + Removed Smb4KGlobal::systemName() function.
+  + Removed Smb4KGlobal::config() function.
+  + Removed Smb4KGlobal::getUMASK().
+- Removed Smb4KHomesShareHandler::convert() function.
+- Revised Smb4KCore class:
+  + Rewrote Smb4KCore::searchPrograms().
+  + Removed Smb4KCore::smb4k_core() static pointer and replaced it with a 
+    better approach (Smb4KCore::self() and static pointers to the core 
+    classes).
+  + Added Smb4KCore::init() function, that initializes the core, i.e. starts 
+    the scanning of the network and the import and remounting of shares.
+- Improved Smb4KSambaOptionsHandler class:
+  + The constructor does not take a KConfig object anymore.
+  + The client charset and server codepage will be auto-detected if the 'unix
+    charset' and 'dos charset' options are present in smb.conf, respectively
+    (closes #10805).
+- Modified Smb4KShare class:
+  + Moved to KUser and KUserGroup to retrieve information about the user and 
+    the group of the mounted share. This sets the minimum requirement to KDE 
+    3.3.
+  + Added Smb4KShare::setUID() and Smb4KShare::setGID() functions.
+  + Smb4KShare::equals() now takes a constant reference instead of a pointer.
+- Improved Smb4KMounter class:
+  + Removed legacy code from mountRecent() function and renamed it to 
+    remount().
+  + Renamed Smb4KMounter::State::MountRecent to Smb4KMounter::State::Remount.
+  + Smb4KMounter::findShareByName() now returns a list of all mounts of the
+    specified share that are present on the system. This way the checks for
+    mounted shares etc. could be improved.
+  + Rewrote Smb4KMounter::mount() function.
+  + Cleaned up Smb4KMounter::unmount() and improved the remaining checks.
+  + Removed check for correct Linux kernel if the &quot;Force Unmounting&quot; feature 
+    is used. The operating system will throw an error if the wrong kernel is 
+    used.
+  + Added a new function Smb4KMounter::checkAccessibilty( Smb4KShare *share ).
+    It replaces code in Smb4KMounter::import() and 
+    Smb4KMounter::processMount() and simplifies maintenance.
+  + The &quot;bad user name&quot; and &quot;bad group name&quot; messages that are returned by
+    mount.cifs if a bad UID/GID are provided are recognized as errors.
+  + Improved Smb4KMounter::isMounted(). It takes now a boolean as second 
+    argument that determines whether all or only user mounts should be 
+    considered.
+- Modified Smb4KScanner class:
+  + Removed preview code from class.
+  + Improved code for custom search requests.
+  + Renamed Smb4KScanner::addHost() function to Smb4KScanner::insertHost() and
+    improved it.
+  + Added hostAdded() signal that is emitted when a single host has been added
+    via the insertHost() function to the list of known hosts.
+- Moved Smb4KMounterPrivate and Smb4KScannerPrivate classes to own files. Now
+  the users can use the --enable-final configure option without problems.
+- Introduced Smb4KPreviewer core class that takes care of previews of remote
+  shares.
+- Rewrote Smb4KPreviewItem class and moved it into own files.
+- Introduced new Smb4KSynchronizationInfo container class.
+- Modified Smb4KSynchronizer class:
+  + Replaced the &quot;--devices&quot; option by the &quot;--devices --specials&quot; options, so
+    that also fifos, etc. can be preserved.
+  + Replaced the &quot;--remove-sent-files&quot; option by &quot;--remove-source-files&quot;. This
+    makes rsync 2.6.9 a requirement, if you want to take advantage of this
+    option.
+  + Removed the URL requester and the progress dialog.
+  + Added new signals: progress() and finished().
+  + Make use of the new Smb4KSynchronizationInfo container class.
+  + A new synchronization request won't be taken if one is already processed.
+- Modified Smb4KPasswordHandler class:
+  + Removed import() function which imported authentication data from old
+    password file (versions prior to Smb4K 0.6.0).
+  + The constructor does not take a KConfig object anymore.
+  + The descriptive text in the askpass dialog now distinguishes between a
+    server and a share.
+- Did a major revision of Smb4KFileIO class:
+  + Removed Smb4KFileIO::getUsers().
+  + Removed Smb4KFileIO::writeSuperUserEntries().
+  + Removed Smb4KFileIO::removeSuperUserEntries().
+  + Removed Smb4KFileIO::processOutput().
+  + Removed obsolete compatibility code.
+  + Introduced Smb4KFileIO::writeSudoers().
+  + Introduced Smb4KFileIO::writeSuperTab().
+  + Introduced Smb4KFileIO::processSudoers().
+  + Introduced Smb4KFileIO::processSuperTab().
+  + The env_keep list will not be replaced, but PASSWD and USER are appended
+    to it.
+- Modified definitions in smb4kdefs.h. For changes see the file itself.
+- Improved Smb4KBookmark class:
+  + Added ability to define an alternative label that can be used to identify
+    the bookmark in a custom way.
+  + Added constructor that takes a Smb4KHostItem object.
+- Improved Smb4KBookmarkHandler class:
+  + Implemented support for the new label feature.
+  + Replaced findBookmark() by findBookmarkByName() and findBookmarkByLabel()
+    functions.
+  + Rewrote addBookmark() function.
+- Smb4KPrint now supports the &quot;application/x-shellscript&quot; mime type.
+- Unified API of the network item classes.
+- Bumped version of the core library to 2.0.0.
+- Rewrote main window:
+  + Smb4KApp now inherits KParts::DockMainWindow.
+  + Removed labels that gave information about the WINS server and the look-up
+    method.
+  + Made the status bar messages a bit more informative.
+- Redesigned shares icon view:
+  + Removed Smb4KShareWidget, Smb4KShareWidgetItem, Smb4KShareActionMenu, and
+    Smb4KShareTooltip classes.
+  + Introduced new classes: Smb4KSharesIconView, Smb4KSharesIconViewItem,
+    Smb4KSharesIconViewPart, and Smb4KSharesIconViewToolTip.
+  + The shares iconview is now a KParts KDE module: libsmb4ksharesiconview.
+  + Removed the fake list view feature.
+  + Added ability to open a mounted share with Konsole. This is useful for
+    people who need to execute shell scripts on the share.
+- Added new shares list view:
+  + The features of the new list view are similar to the ones of the icon 
+    view.
+  + The new list view consists of the classes: Smb4KSharesListViewPart,
+    Smb4KSharesListView, Smb4KSharesListViewItem and 
+    Smb4KSharesListViewToolTip.
+- Redesigned network browser:
+  + Removed Smb4KBrowserWidget, Smb4KBrowserWidgetItem, 
+    Smb4KBrowserActionMenu, and Smb4KNetworkItemTooltip classes.
+  + Introduced new classes: Smb4KNetworkBrowser, Smb4KNetworkBrowserItem,
+    Smb4KNetworkBrowserPart and Smb4KNetworkBrowserToolTip.
+  + The network browser is now a KParts KDE module: libsmb4knetworkbrowser.
+- Redesigned search dialog:
+  + Applied a major revision to the Smb4KSearchDialog class. Among other 
+    things, the widget that shows the search results is now a KListView.
+  + Introduced new Smb4KSearchDialogItem class for easier handling of the 
+    items in the list view.
+  + Introduced Smb4KSearchDialogPart class that manages the communication with
+    the core and the rest of the application.
+  + The search dialog is now a KParts KDE module: libsmb4ksearchdialog. (An rc
+    file is not provided because it's not needed.)
+- Introduced a new synchronization dialog (Smb4KSynchronizationDialog) where 
+  the old URL requester and the progress dialog from Smb4KSynchronizer were 
+  merged.
+- Redesigned the print dialog.
+- Revised the preview dialog. It now uses the new Smb4KPreviewer class and the
+  reworked Smb4KPreviewItem class.
+- Modified and improved the bookmark editor:
+  + It is now possible to define a custom label to identify a bookmark.
+  + The workgroup is not editable anymore.
+- Rewrote Smb4KSystemTray class from scratch:
+  + The old functionality has been preserved.
+  + Added the ability to unmount all mounted shares at once.
+- Ported the Konqueror plugin to the new widgets.
+- Modified utility programs:
+  + Removed deprecated arguments from smb4k_mount.
+  + Removed deprecated arguments from smb4k_umount.
+  + Adjusted help screens where necessary.
+  + Bumped versions where appropriate.
+
+The source code can be downloaded from [1]. 
+
+For the Smb4K team
+Alexander Reinholdt
+
+[1] <A HREF="http://prdownload.berlios.de/smb4k/smb4k-0.9.0.tar.bz2">http://prdownload.berlios.de/smb4k/smb4k-0.9.0.tar.bz2</A>
+
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with
+experience...&quot; (unknown)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000017.html">[smb4k-devel] Branch for upcoming Smb4K 0.9 created / Status of	release
+</A></li>
+	<LI>Next message: <A HREF="000019.html">[smb4k-devel] First KDE 4 related code will enter CVS soon
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#18">[ date ]</a>
+              <a href="thread.html#18">[ thread ]</a>
+              <a href="subject.html#18">[ subject ]</a>
+              <a href="author.html#18">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

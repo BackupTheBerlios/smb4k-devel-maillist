@@ -1,0 +1,43 @@
+From alexander.reinholdt at t-online.de  Sat Jan 30 18:57:01 2010
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 30 Jan 2010 18:57:01 +0100
+Subject: [smb4k-devel] Smb4K 0.9.10 released
+Message-ID: <201001301857.01917.alexander.reinholdt@t-online.de>
+
+Smb4K 0.9.10 has been made available today. It is the latest and final 
+maintenance release for the KDE 3 branch of Smb4K and comes with several fixes 
+for problems that surfaced within the last year.
+
+ChangeLog:
+- Prevent the scanner from trying to do something before the application
+  has completely started up.
+- Replaced Smb4KPasswordHandler class with the backported Smb4KWalletManager
+  class (should close #14703).
+- Smb4KHomesSharesHandler class has to be accessed via a static pointer
+  now.
+- Fixed problems with Samba 3.3 (among others closes #15276).
+- Revised Smb4KGlobal namespace:
+  + Removed passwordHandler() function. Use Smb4KWalletManager::self()
+    instead.
+  + Removed homesHandler() function. Use Smb4KHomesSharesHandler::self()
+    instead.
+  + Removed timer() function. It was long deprecated and not used 
+    anymore.
+- Adjusted code to use the new infrastructure.
+- Fixed compilation errors under CentOS 4.8.
+- Bumped version of the core library to 2.1.0.
+
+MD5 sum: ee1c55026d0d6f756a5603499e33df16  smb4k-0.9.10.tar.bz2
+SHA256 sum: 96d19f41eafb624979cf34d614f942c98a018adcfb6b9f56904da3faf1170f3d  
+smb4k-0.9.10.tar.bz2
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.9.10.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

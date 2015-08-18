@@ -1,0 +1,62 @@
+From alexander.reinholdt at t-online.de  Sat Feb 13 11:49:19 2010
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 13 Feb 2010 11:49:19 +0100
+Subject: [smb4k-devel] Smb4K 0.10.5 released
+Message-ID: <201002131149.19688.alexander.reinholdt@t-online.de>
+
+The fifth maintenance release of Smb4K 0.10 has been made available today. It 
+mainly fixes a crash that occurred under certain circumstances if custom Samba 
+options were added or updated.
+
+ChangeLog:
+- Fixed a crash in Smb4KSambaOptionsHandler::addItem().
+- The copy constructor of Smb4KAuthInfo class now takes a constant reference.
+
+MD5 sum: 7596632420ebdb50a21dc0f3fa559727 smb4k-0.10.5.tar.bz2
+SHA256 sum: a3537a15b875d38f861fdd82fb04f5e3e2067095987ee03899d92e918ff3f2cf 
+smb4k-0.10.5.tar.bz2
+
+The default download location is:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.5.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+From alexander.reinholdt at t-online.de  Tue Feb 16 16:50:52 2010
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Tue, 16 Feb 2010 16:50:52 +0100
+Subject: [smb4k-devel] Release of Smb4K 0.10.5
+Message-ID: <201002161650.52730.alexander.reinholdt@t-online.de>
+
+Hello!
+
+I'm Alexander Reinholdt, the main developer of Smb4K. I was notified that our 
+latest release caused some irritation among the KDE translators because it was 
+not published with the translations from l10n-kde4. So, I would like to 
+explain the situation.
+
+First of all I want to stress that we appreciate the work of the KDE 
+translators very much and we did not mean to offend or intimidate anyone.
+
+Smb4K 0.10 is the predecessor of the version that is in KDE playground and is 
+still hosted at BerliOS (We imported a development snapshot without any 
+history into KDE SVN a few months ago.). Smb4K 0.10.5 has been packaged from 
+that branch outside KDE. Additionally, since there are approximately 18 months 
+of development between Smb4K 0.10 and the version in playground, the messages 
+already diviate significantly, so that it would not make much sense to copy the 
+new translations to the "old" source code.
+
+For the next major release will definitely use the translations from l10n-kde4 
+and I want to apologize for any misunderstanding and irritation caused.
+
+Best regards
+Alexander
+
+P.S.: Please CC me because I'm not subscribed to this mailing list.
+
+
+

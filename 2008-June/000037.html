@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.10.0alpha &amp; schedule for release
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2008-June/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.0alpha%20%26%20schedule%20for%20release&In-Reply-To=%3C200806242051.18192.alexander.reinholdt%40web.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000036.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.10.0alpha &amp; schedule for release</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.0alpha%20%26%20schedule%20for%20release&In-Reply-To=%3C200806242051.18192.alexander.reinholdt%40web.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.10.0alpha &amp; schedule for release">alexander.reinholdt at web.de
+       </A><BR>
+    <I>Tue Jun 24 20:51:17 CEST 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000036.html">[smb4k-devel] Smb4K 0.10.0alpha released
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#37">[ date ]</a>
+              <a href="thread.html#37">[ thread ]</a>
+              <a href="subject.html#37">[ subject ]</a>
+              <a href="author.html#37">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello Martin,
+
+most of the strings will be the same. I'll update the translation in HEAD with 
+the one from 09 and commit it then (this evening).
+
+Bye
+Alexander
+
+
+
+Am Sunday 22 June 2008 schrieben Sie:
+&gt;<i> Hello, Alexander.
+</I>&gt;<i> Last week I commited the spanish translation for 0.90 branch. Are the
+</I>&gt;<i> messages the same for 0.10? I'm asking because I see more than a
+</I>&gt;<i> hundred fuzzy strings in the cvs branch, and some are the same I fixed
+</I>&gt;<i> in my commit.
+</I>&gt;<i>
+</I>&gt;<i> Bye
+</I>&gt;<i>
+</I>&gt;<i> 2008/6/21 Alexander Reinholdt &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/smb4k-devel">alexander.reinholdt at web.de</A>&gt;:
+</I>&gt;<i> &gt; Hello everyone,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; today I finished the last item on my list that I wanted to implement
+</I>&gt;<i> &gt; before an alpha release: the drag and drop support in the shares view.
+</I>&gt;<i> &gt; And I think now is the time to release the first version to the public.
+</I>&gt;<i> &gt; This will be done tomorrow. However there are still features missing.
+</I>&gt;<i> &gt; Especially the main window does still need a bit of work and there are
+</I>&gt;<i> &gt; also one or two other things I want to implement.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I plan to release at least two additional beta versions before the final
+</I>&gt;<i> &gt; version will be made available, so that the schedule for release will
+</I>&gt;<i> &gt; roughly look like this:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; 22.06.2008: Release Smb4K 0.10.0alpha
+</I>&gt;<i> &gt; 06.07.2008: Release Smb4K 0.10.0beta1
+</I>&gt;<i> &gt; 20.07.2008: Release Smb4K 0.10.0beta2
+</I>&gt;<i> &gt; 03.08.2008: Release Smb4K 0.10.0
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; This schedule might still be changed if some unexpected showstoppers
+</I>&gt;<i> &gt; appear.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Since most of the messages won't change until the final release, you can
+</I>&gt;<i> &gt; already start to translate the messages. They can be checked out by
+</I>&gt;<i> &gt; running the following command in the shell:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; $ cvs -d&lt;login&gt;@cvs.berlios.de:/cvsroot/smb4k co -P smb4k/po
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Please note that due to our new build system, the translations are not
+</I>&gt;<i> &gt; stored under po/&lt;lang&gt;.po anymore but under po/&lt;lang&gt;/smb4k.po.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; If you want to check out the whole source code and test it or help with
+</I>&gt;<i> &gt; development, you should run the following command:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; $ cvs -d&lt;login&gt;@cvs.berlios.de:/cvsroot/smb4k co -P smb4k
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Compilation of the source should be done in an extra build directory. It
+</I>&gt;<i> &gt; can be set up like this:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; $ mkdir smb4k_build
+</I>&gt;<i> &gt; $ cd  smb4k_build
+</I>&gt;<i> &gt; $ cmake -DCMAKE_INSTALL_PREFIX=&lt;install_prefix&gt; -DCMAKE_BUILD_TYPE=Debug
+</I>&gt;<i> &gt; . &lt;path_to_source&gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; If you want cmake to generate KDevelop project files, add the -GKDevelop3
+</I>&gt;<i> &gt; argument.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Please note that the Konqueror plugin is not enabled by default, because
+</I>&gt;<i> &gt; it is not ported yet. To enable it, e.g. if you want to port it, also add
+</I>&gt;<i> &gt; the -DCOMPILE_KONQPLUGIN=true argument.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; That's it for now.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Have a nice weekend!
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Alexander
+</I>&gt;<i> &gt; --
+</I>&gt;<i> &gt; &quot;Never argue with idiots. They drag you down to their level and beat you
+</I>&gt;<i> &gt; with experience...&quot; (unknown)
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Smb4K-devel mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/smb4k-devel">Smb4K-devel at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/smb4k-devel">https://lists.berlios.de/mailman/listinfo/smb4k-devel</A>
+</I>
+
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with 
+experience...&quot; (unknown)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000036.html">[smb4k-devel] Smb4K 0.10.0alpha released
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#37">[ date ]</a>
+              <a href="thread.html#37">[ thread ]</a>
+              <a href="subject.html#37">[ subject ]</a>
+              <a href="author.html#37">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.10.68 (1.0.0 alpha4) released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2011-March/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.68%20%281.0.0%20alpha4%29%20released&In-Reply-To=%3C201103060629.17458.alexander.reinholdt%40t-online.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000072.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.10.68 (1.0.0 alpha4) released</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.10.68%20%281.0.0%20alpha4%29%20released&In-Reply-To=%3C201103060629.17458.alexander.reinholdt%40t-online.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.10.68 (1.0.0 alpha4) released">alexander.reinholdt at t-online.de
+       </A><BR>
+    <I>Sun Mar  6 06:29:17 CET 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000072.html">[smb4k-devel] Smb4K 0.10.10 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#71">[ date ]</a>
+              <a href="thread.html#71">[ thread ]</a>
+              <a href="subject.html#71">[ subject ]</a>
+              <a href="author.html#71">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>In this alpha release the main focus lay on improving the KDE integration. The 
+core will be converted to using KJobs. As the first two parts the 
+synchronization and the print code have already been converted. The main 
+changes are:
+
+- The old synchronization dialog was removed and we now use the KDE progress 
+  bar with all the neat features it provides.
+- The print dialog now uses a QPrinter object making it possible to extend the 
+  print options in the future.
+- While rewriting the print code we got rid of the dependencies to enscript 
+  and dvips. DVI files are not supported anymore and for text files we use the 
+  QTextDocument class to convert them to PostScript before sending them to the 
+  printer.
+
+MD5 sum: e1a508c19a24235eabb0ab3e1b15d891 smb4k-0.10.68.tar.bz2
+SHA256 sum: e1d26d6e77f941bb773a3b2289d65dd5cc0ccfab9ce72dc62432b15e11807a8d 
+smb4k-0.10.68.tar.bz2
+
+The source tarball can be downloaded from
+<A HREF="http://prdownload.berlios.de/smb4k/smb4k-0.10.68.tar.bz2">http://prdownload.berlios.de/smb4k/smb4k-0.10.68.tar.bz2</A>
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with 
+experience...&quot; (unknown)
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000072.html">[smb4k-devel] Smb4K 0.10.10 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#71">[ date ]</a>
+              <a href="thread.html#71">[ thread ]</a>
+              <a href="subject.html#71">[ subject ]</a>
+              <a href="author.html#71">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

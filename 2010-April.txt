@@ -1,0 +1,31 @@
+From alexander.reinholdt at t-online.de  Wed Apr  7 08:17:05 2010
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Wed, 7 Apr 2010 08:17:05 +0200
+Subject: [smb4k-devel] Smb4K 0.10.7 released
+Message-ID: <201004070817.06216.alexander.reinholdt@t-online.de>
+
+The seventh maintenance release of Smb4K 0.10 has been made available today. 
+It fixes the invalid option errors thrown by smb4k_umount when trying to 
+unmount any share.
+
+Please note that also this version does not ship with the translations from 
+l10n-kde4!
+
+ChangeLog:
+- Replace broken backported smb4k_umount binary with a fixed one from the 
+  0.10 branch. This way you won't get the "unknown argument" errors anymore.
+
+MD5 sum: b972d18df57dafd39e8ef64cce4594ce  smb4k-0.10.7.tar.bz2
+SHA256 sum: 733094cec2b9ad959bb804cc0961f9516b14230aa0118596de6f8f7e06683a30  
+smb4k-0.10.7.tar.bz2
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.7.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

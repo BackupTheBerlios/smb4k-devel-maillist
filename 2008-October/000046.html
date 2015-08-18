@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [smb4k-devel] Smb4K 0.9.8 released
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/smb4k-devel/2008-October/index.html" >
+   <LINK REL="made" HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.9.8%20released&In-Reply-To=%3C200810101821.57751.alexander.reinholdt%40t-online.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000047.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[smb4k-devel] Smb4K 0.9.8 released</H1>
+    <B>Alexander Reinholdt</B> 
+    <A HREF="mailto:smb4k-devel%40lists.berlios.de?Subject=Re%3A%20%5Bsmb4k-devel%5D%20Smb4K%200.9.8%20released&In-Reply-To=%3C200810101821.57751.alexander.reinholdt%40t-online.de%3E"
+       TITLE="[smb4k-devel] Smb4K 0.9.8 released">alexander.reinholdt at t-online.de
+       </A><BR>
+    <I>Fri Oct 10 18:21:57 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000047.html">[smb4k-devel] Smb4K 0.10.1 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The Smb4K team today released another update to the 0.9 series of Smb4K. 
+Version 0.9.8 comes with the backported fix for the broken sudoers file issue. 
+The fix comprises the replacement of the utility programs smb4k_cat and 
+smb4k_mv by the new smb4k_sudowriter command and the removal of the support of 
+the program super (You have to to reconfigure Smb4K if you used super until 
+now.). To reflect these changes, the handbook has been updated.
+
+ChangeLog:
+- Backported smb4k_sudowriter utility program. It directly writes to 
+  the /etc/sudoers file and thus finally fixes the messed-up-sudoers-file
+  bug.
+- Removed smb4k_cat utility program. It's not needed anymore.
+- Removed smb4k_mv utility program. It's not needed anymore.
+- Removed the support for the program 'super'. If you used it before, you 
+  need to reconfigure Smb4K.
+- Completely rewrote Smb4KFileIO class to support smb4k_sudowriter.
+- Removed the &quot;Programs&quot; widget from the &quot;Super User&quot; configuration page.
+  It is not needed anymore.
+
+MD5 sum: 6a01f15db599881fd5b0b13a0124e81e  smb4k-0.9.8.tar.bz2
+SHA256 sum: 47b4f8cb5fde32cb2fc63276b42427e2e15bd4d53544923cbd5f71f5253b01d6  
+smb4k-0.9.8.tar.bz2
+
+The source code can be downloaded from [1].
+
+For the Smb4K team
+Alexander Reinholdt
+
+[1] <A HREF="http://prdownload.berlios.de/smb4k/smb4k-0.9.8.tar.bz2">http://prdownload.berlios.de/smb4k/smb4k-0.9.8.tar.bz2</A>
+-- 
+&quot;Never argue with idiots. They drag you down to their level and beat you with 
+experience...&quot; (unknown)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000047.html">[smb4k-devel] Smb4K 0.10.1 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#46">[ date ]</a>
+              <a href="thread.html#46">[ thread ]</a>
+              <a href="subject.html#46">[ subject ]</a>
+              <a href="author.html#46">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/smb4k-devel">More information about the Smb4K-devel
+mailing list</a><br>
+</body></html>

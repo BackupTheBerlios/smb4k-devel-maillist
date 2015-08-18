@@ -1,0 +1,29 @@
+From alexander.reinholdt at t-online.de  Wed Nov  5 19:08:20 2008
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Wed, 5 Nov 2008 19:08:20 +0100
+Subject: [smb4k-devel] Smb4K 0.9.9 released
+Message-ID: <200811051908.20983.alexander.reinholdt@t-online.de>
+
+And here is another maintenance release for the KDE 3 branch of Smb4K. Version 
+0.9.9 finally fixes (I promise!) the hanging of Smb4K on KDE start-up when you 
+configured it to remount recently used shares.
+
+ChangeLog:
+- Prevent the mounter from trying to do something before the application has   
+  completely started up (closes #14703).
+
+MD5 sum: a38da207beae0ced66be0219a0028843 smb4k-0.9.9.tar.bz2
+SHA256 sum: 611c20293063e94992f2c12da3d779d9d71a0197e1dc4c5f3a5e0eb700697b16 
+smb4k-0.9.9.tar.bz2
+
+The new version can be downloaded from
+http://prdownload.berlios.de/smb4k/smb4k-0.9.9.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+

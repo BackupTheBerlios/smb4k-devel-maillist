@@ -1,0 +1,62 @@
+From alexander.reinholdt at t-online.de  Sat Jul  2 10:48:39 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 2 Jul 2011 10:48:39 +0200
+Subject: [smb4k-devel] Smb4K 0.10.70 (1.0.0 beta1) released
+Message-ID: <201107021048.40228.alexander.reinholdt@t-online.de>
+
+This is the first beta release of the upcoming Smb4K version 1.0.0. Changes 
+compared to 0.10.69 comprise an improved handling of custom options (complete 
+revision), improved notifications, a rewritten network neighborhood scanner 
+(it uses KJobs now), and several small modifications and bug fixes.
+
+For a detailed list of changes please refer to the ChangeLog file within the 
+tarball.
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.70.tar.bz2
+
+Checksums:
+MD5 sum: 30f916d8f72fc43a9eca8f344960b43a smb4k-0.10.70.tar.bz2
+SHA256 sum: 1dfbeee2673f8f79dbce1cfbd88935832a5ead48237af169161993072158cb37 
+smb4k-0.10.70.tar.bz2
+
+Bug reports can be filed to our bug tracker:
+href="http://developer.berlios.de/bugs/?group_id=769
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+From alexander.reinholdt at t-online.de  Sun Jul 31 15:47:34 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sun, 31 Jul 2011 15:47:34 +0200
+Subject: [smb4k-devel] Smb4K 0.10.71 (1.0.0 beta2) released
+Message-ID: <201107311547.35441.alexander.reinholdt@t-online.de>
+
+This second beta release of Smb4K 1.0.0 comes with improvements to the browse 
+code and the handling of 'homes' shares. The mounting under Linux has been 
+fixed and initial work has been done to make Smb4K work properly under FreeBSD 
+again.
+
+Many thanks go to those users who helped us to improve Smb4K by sending bug 
+reports. Please keep on reporting any bugs you find to our bug tracker: 
+http://developer.berlios.de/bugs/?group_id=769
+
+Download location:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.71.tar.bz2
+
+Checksums:
+MD5 sum: 036a6ed27ee5c6b1e0ca97eda786c267  smb4k-0.10.71.tar.bz2
+SHA256 sum: 024e9fdd7dea3c09c0a279dd53afdde3bfacf8e18626ee69cfb14417eb53f1bd  
+smb4k-0.10.71.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+

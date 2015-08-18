@@ -1,0 +1,35 @@
+From alexander.reinholdt at t-online.de  Tue Dec 23 14:40:18 2008
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Tue, 23 Dec 2008 14:40:18 +0100
+Subject: [smb4k-devel] Konqueror plugin for KDE 4 version
+Message-ID: <200812231440.18181.alexander.reinholdt@t-online.de>
+
+Hello everyone,
+
+yesterday night I wondered if porting the Konqueror plugin to KDE 4 was a hard 
+thing to do. I started to port it and three hours later the code compiled. 
+However, the plugin is still not working, because everytime I try to add it to 
+Konqueror's side bar, Konqueror freezes and an error message  similar to this 
+one is shown in the shell:
+
+QString::arg: Argument missing: /konqsidebartng//entries/, 542512
+
+I tried to find out what happens here, but I did not succeed. Googling for the 
+error indicated that a falsely formatted string (most likely with a wrong 
+substitution like %1 or similar) is passed somewhere, but I couldn't find it.
+
+Massimo, do you have any idea what's going one here?
+
+The new code is in CVS. If you want to compile the Konqueror plugin, add the 
+following argument to the cmake command line: -DCOMPILE_KONQPLUGIN=true
+
+For those of you, who celebrate christmas: Merry Christmas! 
+
+Best regards
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
+

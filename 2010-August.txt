@@ -1,0 +1,26 @@
+From alexander.reinholdt at t-online.de  Sat Aug 21 08:19:01 2010
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 21 Aug 2010 08:19:01 +0200
+Subject: [smb4k-devel] Smb4K 0.10.8 released
+Message-ID: <201008210819.01863.alexander.reinholdt@t-online.de>
+
+This is the eighth maintenance release for the 0.10 branch of Smb4K. It comes 
+with fixes of two crashes and also makes Smb4K work with the cifs-utils package 
+(Linux).
+
+ChangeLog:
+- Cope with trailing slashes in the UNC. Needed for cifs-utils package under
+  Linux.
+- Fixed crashes in Smb4KSystemTray::slotSetupSharesMenu().
+- Fixed crashes in Smb4KScanner::scanForWorkgroupMembers().
+
+MD5 sum: 5e180f99d8a4de173531c6e39688c9f9 smb4k-0.10.8.tar.bz2
+SHA256 sum: 0d5402bb26fc213c32aed62cc3b9a817d0155a7f432267fe5163d8b19cfb89ec 
+smb4k-0.10.8.tar.bz2
+
+Download location: http://prdownload.berlios.de/smb4k/smb4k-0.10.8.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+
+

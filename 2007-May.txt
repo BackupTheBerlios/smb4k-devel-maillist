@@ -1,0 +1,137 @@
+From alexander.reinholdt at web.de  Tue May  1 10:00:23 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Tue, 1 May 2007 10:00:23 +0200
+Subject: [smb4k-devel] Smb4K 0.8.2 released
+Message-ID: <200705011000.23471.alexander.reinholdt@web.de>
+
+This is the second maintenance release of Smb4K 0.8 that we released today. It 
+provides a workaround for a bug that led to shares being remounted with UID=0 
+and GID=0 when the CIFS file system was used. Besides, a few cosmetic changes 
+and a bug fix were applied to the utility programs. The handbook was updated.
+
+ChangeLog:
+- Modified utility programs:
+  + Fixed the "No mode was specified" bug in smb4k_mount/smb4k_umount and
+    related issues in the other utility programs.
+  + Modified the help screens of the utility programs with respect to clarity
+    and better readability.
+  + Warnings are shown if deprecated arguments are used.
+  + Increased all versions by 0.1.
+- Worked around a bug where shares where remounted with UID=0 and GID=0 when
+  using the CIFS file system.
+- Improved the 'Trouble Shooting' section of the handbook and bumped its 
+  version to 1.1.2.
+
+MD5 sum:  42edd8da953003f0e91f31ec6b9a35f4  smb4k-0.8.2.tar.bz2
+SHA1 sum: 2cc8b19aa7ddbd127889ebb2169be5da25f35447  smb4k-0.8.2.tar.bz2
+
+The source code can be downloaded here:
+http://prdownload.berlios.de/smb4k/smb4k-0.8.2.tar.bz2.
+
+For the Smb4K project
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+
+From alexander.reinholdt at web.de  Wed May  2 19:12:33 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Wed, 2 May 2007 19:12:33 +0200
+Subject: [smb4k-devel] Smb4K 0.8.3 released
+Message-ID: <200705021912.34083.alexander.reinholdt@web.de>
+
+Only hours after Smb4K 0.8.2 was released, it was noticed that the unmount 
+command lines had not been adjusted to the new versions of the utility 
+programs and that, hence, Smb4K complained everytime a share was unmounted. 
+This issue has been fixed in this version.
+
+ChangeLog:
+- Fixed command line in Smb4KMounter:unmount() that provoked smb4k_umount 
+  to complain about a deprecated argument.
+- Applied Turkish translation patch provided by Ismail Donmez.
+
+MD5 sum: 765fc323338e9cd19d0b285ab414ab71  smb4k-0.8.3.tar.bz2
+SHA1 sum: 22d9b2b43e9c5cad992ecedf146f18e5422226fb  smb4k-0.8.3.tar.bz2
+
+Download: http://prdownload.berlios.de/smb4k/smb4k-0.8.3.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+
+From alexander.reinholdt at web.de  Sat May 12 08:57:59 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sat, 12 May 2007 08:57:59 +0200
+Subject: [smb4k-devel] First commits of new code to HEAD
+Message-ID: <200705120857.59654.alexander.reinholdt@web.de>
+
+Hello everyone,
+
+I know I haven't written anything for quite some time to this mailing list and 
+I'm sorry. My work kept me busy over the last weeks and in the spare time I 
+implemened new features into Smb4K. So, today, I want to announce that I will 
+start to commit the changes I already did to the code base this weekend. 
+Since there are so many changes and I plan not to commit everything in one go 
+but bit by bit, there will be times the code won't compile.
+
+One of the first things I'll commit will be the new, work-in-progress 
+translations. If you like, you can start translating them right away.
+
+Have a nice weekend!
+
+Bye
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+
+From alexander.reinholdt at web.de  Sun May 20 22:06:00 2007
+From: alexander.reinholdt at web.de (Alexander Reinholdt)
+Date: Sun, 20 May 2007 22:06:00 +0200
+Subject: [smb4k-devel] CVS HEAD up-to-date
+Message-ID: <200705202206.00804.alexander.reinholdt@web.de>
+
+Hello everyone,
+
+the CVS HEAD repository is now up-to-date. Today I committed the last local 
+modifications.
+
+Here are some remarks concerning changes in the code:
+
+(1) The smb4k/widgets/ subdirectory is obsolete. All class files that are 
+still present in there will vanish sooner or later. Do not link to 
+libsmb4kwidgets library anymore.
+
+(2) Smb4K now uses KConfig XT and thus making the Smb4KGlobal::config() object 
+obsolete. Please use the Smb4KSettings static functions.
+
+(3) The widgets of the main window have moved to KParts and you can load the 
+respective libraries using KLibLoader. See Smb4KApp class for an example.
+
+(4) The configuration dialog can also be loaded with KLibLoader. See Smb4KApp 
+for an example.
+
+(5) To access the core objects now use the static pointers Smb4KCore::self(), 
+Smb4KCore::scanner(), Smb4KCore::mounter(), Smb4KCore::synchronizer(), etc.
+
+(6) The popup menus that were organized in separate classes in previous 
+version of Smb4K are now managed by the KParts. If modifications are needed 
+to integrate them into e.g. the Konqueror plugin, please let me know.
+
+OK, that is it for now. If you have any trouble getting your code working, 
+please contact me.
+
+Have a nice evening!
+
+Bye
+Alexander
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with
+experience..." (unknown)
+
+

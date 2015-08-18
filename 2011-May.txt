@@ -1,0 +1,32 @@
+From alexander.reinholdt at t-online.de  Sat May  7 20:01:51 2011
+From: alexander.reinholdt at t-online.de (Alexander Reinholdt)
+Date: Sat, 7 May 2011 20:01:51 +0200
+Subject: [smb4k-devel] Smb4K 0.10.69 (1.0.0 alpha5) released
+Message-ID: <201105072001.51533.alexander.reinholdt@t-online.de>
+
+In this alpha release the code for handling bookmarks and homes shares has 
+been rewritten, the IP address scanner, the print and search classes, the 
+mounter and the previewer have been converted to KCompositeJobs and they use 
+KJobs to do the work. Most of the dialogs have become private core helper 
+classes. Bugs have been fixed.
+
+MD5 sum: 
+f817bab96dbd3bdea0cd3b0af52b2288 smb4k-0.10.69.tar.bz2
+
+SHA256 sum: 
+25655bbe0917b3c651ae951da7a88fbfb351f5cd2f6350927c9d8a1fc869c5c5 
+smb4k-0.10.69.tar.bz2
+
+Release notes: 
+https://developer.berlios.de/project/shownotes.php?release_id=18525
+
+Download:
+http://prdownload.berlios.de/smb4k/smb4k-0.10.69.tar.bz2
+
+For the Smb4K team
+Alexander Reinholdt
+-- 
+"Never argue with idiots. They drag you down to their level and beat you with 
+experience..." (unknown)
+
+
